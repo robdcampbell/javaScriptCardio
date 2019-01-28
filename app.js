@@ -1,61 +1,77 @@
 // Daily Vanilla Javascript Cardio 
 
 
-// **** 1/28/2019
+// **** 1/28/2019  **** //
 
-class Person {
-    constructor(firstName,lastName,age){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
+//EXPLORING: persistance to local storage. 
 
-    sayHello(){
-        console.log(`Hello, ${this.firstName} ${this.lastName}`);
-    };
+    const textVal = document.querySelector('#textVal');
+    const btn = document.querySelector('#textConfirmed');
+    const db = [];
 
-    isAdult(){
-        console.log(this.age);
-        if(this.age >= 18){
-            console.log(`${this.firstName} is an adult`);
-        } else {
-            console.log(`${this.firstName} is not an adult`);
+    btn.addEventListener('click',()=> {
+        console.log("It's still working!");
+        if(textVal.value !== ''){
+            console.log(textVal.value);
+            textVal.value = '';
         }
-    }
-}
+    });
 
-const john = new Person('John', 'Smith', 45);
 
-john.sayHello();
-john.isAdult();
+
+        // class Person {
+        //     constructor(firstName,lastName,age){
+        //         this.firstName = firstName;
+        //         this.lastName = lastName;
+        //         this.age = age;
+        //     }
+
+        //     sayHello(){
+        //         console.log(`Hello, ${this.firstName} ${this.lastName}`);
+        //     };
+
+        //     isAdult(){
+        //         console.log(this.age);
+        //         if(this.age >= 18){
+        //             console.log(`${this.firstName} is an adult`);
+        //         } else {
+        //             console.log(`${this.firstName} is not an adult`);
+        //         }
+        //     }
+        // }
+
+        // const john = new Person('John', 'Smith', 45);
+
+        // john.sayHello();
+        // john.isAdult();
 
 
 // **** 1/27/2019
 
-// Some Higher Array Methods
+        // Some Higher Array Methods
 
-// Exploring: map()
-        // const arr =[0,2,0,304,0,34345];
-        // const doubleArr = arr.map((i)=>i*2);
-        // console.log(doubleArr);
-        // console.log(arr);
+        // Exploring: map()
+                // const arr =[0,2,0,304,0,34345];
+                // const doubleArr = arr.map((i)=>i*2);
+                // console.log(doubleArr);
+                // console.log(arr);
 
-//Exploring: filter()
-        // const arr = [0,2,0,304,0,34345];
-        // const moreThanFive = arr.filter((i) => i > 5);
-        // console.log(moreThanFive);
+        //Exploring: filter()
+                // const arr = [0,2,0,304,0,34345];
+                // const moreThanFive = arr.filter((i) => i > 5);
+                // console.log(moreThanFive);
 
-//Exploring: sort()
-        // const arr = [0,2,0,304,0,34345];
-        // const lowToHigh = arr.sort((a,b)=>a-b);
-        // const highToLow = arr.sort((a,b)=>b-a);
-        // console.log(lowToHigh);
-        // console.log(highToLow);
-        // console.log(arr);
+        //Exploring: sort()
+                // const arr = [0,2,0,304,0,34345];
+                // const lowToHigh = arr.sort((a,b)=>a-b);
+                // const highToLow = arr.sort((a,b)=>b-a);
+                // console.log(lowToHigh);
+                // console.log(highToLow);
+                // console.log(arr);
 
-        // Important note: sort will change the original array!
+                // Important note: sort will change the original array!
 
-//
+        //
 
 // **** 1/24/2019 **** //  DAY 1
 
