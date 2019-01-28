@@ -1,6 +1,34 @@
 // Daily Vanilla Javascript Cardio 
 
 
+
+// **** 1/27/2019
+
+// Some Higher Array Methods
+
+// Exploring: map()
+        // const arr =[0,2,0,304,0,34345];
+        // const doubleArr = arr.map((i)=>i*2);
+        // console.log(doubleArr);
+        // console.log(arr);
+
+//Exploring: filter()
+        // const arr = [0,2,0,304,0,34345];
+        // const moreThanFive = arr.filter((i) => i > 5);
+        // console.log(moreThanFive);
+
+//Exploring: sort()
+        // const arr = [0,2,0,304,0,34345];
+        // const lowToHigh = arr.sort((a,b)=>a-b);
+        // const highToLow = arr.sort((a,b)=>b-a);
+        // console.log(lowToHigh);
+        // console.log(highToLow);
+        // console.log(arr);
+
+        // Important note: sort will change the original array!
+
+//
+
 // **** 1/24/2019 **** //  DAY 1
 
 //Exploring: bind()
