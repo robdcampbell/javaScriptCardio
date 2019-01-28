@@ -1,6 +1,34 @@
 // Daily Vanilla Javascript Cardio 
 
 
+// **** 1/28/2019
+
+class Person {
+    constructor(firstName,lastName,age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    sayHello(){
+        console.log(`Hello, ${this.firstName} ${this.lastName}`);
+    };
+
+    isAdult(){
+        console.log(this.age);
+        if(this.age >= 18){
+            console.log(`${this.firstName} is an adult`);
+        } else {
+            console.log(`${this.firstName} is not an adult`);
+        }
+    }
+}
+
+const john = new Person('John', 'Smith', 45);
+
+john.sayHello();
+john.isAdult();
+
 
 // **** 1/27/2019
 
