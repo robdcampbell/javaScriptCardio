@@ -27,14 +27,16 @@ ul {
 .inputForm{
     display: block;
     padding: 2rem;
+    border-bottom: #ccc 1px solid;
 }
 
 .newItem {
     width: 100%;
     display: block;
     margin: 0 auto;
+    margin-top: 1rem;
     list-style: none;
     padding: 2rem;
-    border: #ccc 1px solid;
+    border-bottom: #ccc 1px solid;
     text-align: center;
 }

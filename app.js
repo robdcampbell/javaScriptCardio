@@ -1,54 +1,100 @@
 // Daily Vanilla Javascript Cardio 
 
+/****         1/29/2019        ********/
 
-// **** 1/28/2019  **** //
+    // Destructuring
+
+    // ES5
+        // const numbers = {
+        //     first: 'a',
+        //     second: 'b',
+        //     third: 'c'
+        // }
+        // const firstPlace = numbers.first;
+        // const secondPlace = numbers.second;
+        // const thirdPlace = numbers.third;
+        // console.log(firstPlace, secondPlace, thirdPlace);
+    
+    // ES6
+        // const numbers = {
+        //     first: 'a',
+        //     second: 'b',
+        //     third: 'c'
+        // }
+        // const { first, second, third } = numbers;
+        
+        // console.log(first, second, third);
+
+    // ALSO, changing names while destructuring
+        // const numbers = {
+        //     first: '1',
+        //     second: '2',
+        //     third: '3'
+        // }
+        // const { first: apple, second: banana, third: cranberry } = numbers
+        // console.log(apple, banana, cranberry);
+
+// ****      1/28/2019, 1/29/2019        **** //
 
 //EXPLORING: persistance to local storage with a Vanilla JS to do list. 
 
-    const textVal = document.querySelector('#textVal');
-    const btn = document.querySelector('#textConfirmed');
-    const db = [];
-    const output = document.querySelector('#output');
-    const localInfo = localStorage.getItem('ideas');
-    let ideas;
+            // const textVal = document.querySelector('#textVal');
+            // const btn = document.querySelector('#textConfirmed');
+            // const db = [];
+            // const output = document.querySelector('#output');
+            // const localInfo = localStorage.getItem('ideas');
+            // let ideas;
 
-    console.log(localInfo);
-  
-    // Check if local storage exits. If it does, create the 
-    //list items from persisted data.
-
-    // NEED TO USE AN ARRAY/PUSH
-    
-    window.addEventListener('load',(e)=>{
-        if(localInfo){  
-                   
-        } else {
-            ideas = [];
-        }
-        console.log(ideas);
-    });
-
-    // Create new list item
-    const createNewItem = () =>{
-        if(textVal.value !== ''){
-            console.log(textVal.value);
-            const newLi = document.createElement('li');
-        newLi.className = 'newItem';
-        newLi.appendChild(document.createTextNode(textVal.value));
-        output.appendChild(newLi);
-        }
-    }
-
-    // Persist created list item to local storage
-
-    const saveIdea = (idea) => {
+            // console.log(localInfo);
         
-    }
+            // // Check if local storage exits. If it does, create the 
+            // //list items from persisted data.
 
-    btn.addEventListener('click',()=> {
-        createNewItem();
-        textVal.value = '';
-    });
+            // // NEED TO USE AN ARRAY/PUSH
+            
+            // window.addEventListener('load',(e)=>{
+            //     if(localInfo){  
+                        
+            //     } else {
+            //         ideas = [];
+            //     }
+            //     console.log(ideas);
+            // });
+
+            // class NewItem  {
+            //     constructor(ideasKey, idea){
+            //         this.ideasKey = ideasKey;
+            //         this.idea = idea;
+            //     }
+            //     createNewItem() {
+            //         if(textVal.value !== ''){
+            //             console.log(textVal.value);
+            //             const newLi = document.createElement('li');
+            //         newLi.className = 'newItem';
+            //         newLi.appendChild(document.createTextNode(textVal.value));
+            //         output.appendChild(newLi);
+            //         }
+            //     }
+
+            // } // NewItem (Class)
+            
+
+        
+
+            // // Persist created list item to local storage
+
+            // const saveIdea = (idea) => {
+                
+            // }
+
+            // btn.addEventListener('click',()=> {
+            //    //console.log(textVal.value);
+            //     const newIdea = new NewItem('ideas',textVal.value)
+            //     console.log(newIdea.idea);
+                
+            //    // NewItem.createNewItem();
+            //     textVal.value = '';
+            // });
 
 
 
