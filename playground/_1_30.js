@@ -60,7 +60,7 @@ charCode()  :
 
 
 // REVERSE A STRING: algorithm (decrementing for loop)
-const str = 'hello'
+// const str = 'hello'
       // const revStr = ((str) =>{
       //   let reverse = '';
       //   for(let i=str.length-1; i>=0; i--){
@@ -83,5 +83,35 @@ const str = 'hello'
         // });
 
 // REVERSE A STRING: Recursion
+  const str = 'hello'
 
-console.log(revStr(str));
+  //console.log(revStr(str));
+
+
+    /* recurision: a function that calls itself, from inside */
+
+    let add = function (n){
+      if(n<=0){
+        return 0
+      } else {
+        return n + add(n-1);
+      }
+    }
+
+    console.log(add(3));
+    const string = "station"
+    const stringFirst = string.substr(1);
+    
+
+    //console.log(string.substr(1)+str.charAt(0));
+
+
+    let reverse = ((str)=> {
+      if(str === ''){   // terminal call that ends recursion
+          return '';
+      } else {
+        return reverse(str.substr(1)) + str.charAt(0);
+      }
+    });
+
+    console.log(reverse(string));
