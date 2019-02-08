@@ -49,3 +49,4 @@ class ProAthelete extends Person {
 const gordieHowe = new ProAthelete('Gordie Howe', 90, 'Male', 'Detroit Red Wings');
 
 console.log(gordieHowe.listInfo());
+
