@@ -19,13 +19,17 @@ const reverseArr = arr.reverse();
 
 console.log(reverseArr);
 
-const reverseStr = (str)=>{
+// const reverseStr = (str)=>{
   
-  let reversed = '';
-  for(let i = str.length-1; i >= 0  ; i-- ){
-      reversed += str[i];
-  }
-  return reversed;
+//   let reversed = '';
+//   for(let i = str.length-1; i >= 0  ; i-- ){
+//       reversed += str[i];
+//   }
+//   return reversed;
+// }
+
+const reverseStr = (str)=>{
+    return Array.from(str).reverse().join('');
 }
 
 console.log(reverseStr(str));
