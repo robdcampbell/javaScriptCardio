@@ -69,21 +69,32 @@ const retailType = companies.filter((company)=> company.type === 'auto');
 
       // VERSION 2:
 
-      const string = "Hello";
+      // const string = "Hello";
 
-      // RANDOM EXAMPLE of difference between substr and substring
-      //console.log(string);
-      // console.log(string.substr(1,3));
-      // console.log(string.substring(1,3));
+      // // RANDOM EXAMPLE of difference between substr and substring
+      // //console.log(string);
+      // // console.log(string.substr(1,3));
+      // // console.log(string.substring(1,3));
 
-      function reverse(str){
-        if(str.length <= 1){
-            return str;
-        } else {
-          return reverse(str.substr(1)) + str[0];
-        }
-      }
+      // function reverse(str){
+      //   if(str.length <= 1){
+      //       return str;
+      //   } else {
+      //     return reverse(str.substr(1)) + str[0];
+      //   }
+      // }
 
-      console.log(reverse('hello'));
+      // console.log(reverse('hello'));
 
 // PRACTICAL/USEFUL RECURSION
+
+
+
+/// FINDERS KEEPERS
+
+function findElement(arr, func) {
+  let num = 0;
+  return num;
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
