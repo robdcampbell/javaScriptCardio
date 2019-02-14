@@ -6,7 +6,7 @@ body {
 
 header {
     top:0;
-    background-color: #f4f4f4;
+    background: linear-gradient(90deg,lightblue, rgba(248, 234, 197, 0.927));
     margin: 0 auto;
     border-bottom: 1px #ccc solid;
     margin-bottom: 1rem;
@@ -24,6 +24,15 @@ ul {
     padding: 0;
 }
 
+.wrapper{
+    border: .5px #8aaee8 solid; 
+    border-radius: 1rem;
+    margin: 1rem auto;
+    overflow: auto;
+    width: 70%;
+
+}
+
 .inputForm{
     display: block;
     padding: 2rem;
@@ -39,4 +48,18 @@ ul {
     padding: 2rem;
     border-bottom: #ccc 1px solid;
     text-align: center;
+}
+
+.container {
+    background: none;
+    min-height: 30vh;
+    padding:1rem;
+}
+
+.card {
+    background-color:none;
+    border-radius: 0.5rem;
+    box-shadow: .5px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    margin: 0 auto;
 }
