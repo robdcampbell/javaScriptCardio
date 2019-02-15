@@ -94,7 +94,11 @@ const retailType = companies.filter((company)=> company.type === 'auto');
 
 function findElement(arr, func) {
   let num = 0;
-  return num;
+  const newArr = arr.filter(func);
+  num = newArr[0];
+  return num === 0 ? undefined : num;
 }
 
-findElement([1, 2, 3, 4], num => num % 2 === 0);
+const test = findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+console.log(test);
