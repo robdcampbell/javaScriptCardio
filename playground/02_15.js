@@ -22,21 +22,27 @@
 
 // Return the resulting array. The input arrays should remain the same after the function runs.
 
-function frankenSplice(arr1, arr2, n) {
-    // It's alive. It's alive!
-    let arrStart = arr2.slice(0,n); 
-    let arrEnd = arr2.slice(n);
-    console.log(arrStart);
-    console.log(arrEnd);
+// function frankenSplice(arr1, arr2, n) {
+//     // It's alive. It's alive!
+//     let arrStart = arr2.slice(0,n); 
+//     let arrEnd = arr2.slice(n);
+//     console.log(arrStart);
+//     console.log(arrEnd);
 
-    console.log(arr1);
-    console.log(arr2);
+//     console.log(arr1);
+//     console.log(arr2);
 
-    return arrStart.concat(arr1).concat(arrEnd)
-  }
+//     return arrStart.concat(arr1).concat(arrEnd)
+//   }
   
-  console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+//   console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
 
 
-  
+const arr = [1,2,3,4,5,6]
+const sliced = arr.slice(3);
+console.log(sliced);
+
+const spliced= arr.splice(3);
+console.log(spliced);
+console.log(arr);
 
