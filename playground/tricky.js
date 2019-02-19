@@ -30,3 +30,10 @@ console.log(hero.getSecretIdentity()); // will return John Doe
 
   You need to rebind the hero object to the function when assigning the getSecretIdentity() function to a new variable. 
 */
+
+const arr = [1,2,3,4,5,6,7,8,9,10];
+const filtered = arr.filter((x)=>{
+   return x>=5;
+})
+
+console.log(filtered)
