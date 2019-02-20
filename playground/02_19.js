@@ -15,18 +15,19 @@
                 function setup() {
                     // Write your code here.
                     
-                    //Global Vars
-                    const container = document.querySelector('body');
-
-                    // Event Listener    
-                    container.addEventListener('click',removeImage);
+                    //Event Listeners
+                    document.addEventListener('click', removeImage);
 
                     function removeImage(e){
-                      //console.log(e.target.classList.contains('remove'));
                         if(e.target.classList.contains('remove')){
-                           e.target.parentElement.remove();
+                            //console.log(e.target);
+                            e.target.parentElement.remove();
                         }
                     }
+
+
+
+                    
                 }
                 
                 // Example case. 
@@ -47,6 +48,18 @@
                 //document.getElementsByClassName("remove")[0].click();
                 console.log(document.body.innerHTML);
 
+                // //Global Vars
+                    // const container = document.querySelector('body');
+
+                    // // Event Listener    
+                    // container.addEventListener('click',removeImage);
+
+                    // function removeImage(e){
+                    //   //console.log(e.target.classList.contains('remove'));
+                    //     if(e.target.classList.contains('remove')){
+                    //        e.target.parentElement.remove();
+                    //     }
+                    // }
 
 
     // function formatDate(userDate) {

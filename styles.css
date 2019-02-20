@@ -21,8 +21,12 @@ main {
 }
 
 ul {
+    
     margin: 0 auto;
     padding: 0;
+}
+li {
+    
 }
 
 .wrapper{
@@ -53,7 +57,9 @@ ul {
 
 .container {
     background: none;
-    min-height: 30vh;
+    /* display: flex;
+    justify-content: center */
+    min-height: 10vh;
     padding: 0.5rem;
 }
 .card {
@@ -71,4 +77,8 @@ ul {
     height: 100px;
     margin: 0 auto;
     width: 100px;
+}
+
+footer {
+    text-align: center;
 }
