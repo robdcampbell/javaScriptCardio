@@ -13,6 +13,8 @@ function loadEventListeners(){
     mainForm.addEventListener('click',addItem)
     // Remove Item from List Event
     document.addEventListener('click',removeItem)
+    //alerting what the parent element is
+    document.addEventListener('click', getParent)
 }
 
 
@@ -46,3 +48,27 @@ function removeItem(e){
     //    console.log('has remove');
     // }
 }
+
+
+// Alert Parent Element 
+function getParent(e){
+    //alert(e.target.parentElement.tagName);
+    console.log(e.target);
+}
+
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+}
+
+function Athelete(){};
+
+Athelete.prototype = Object.create(Person.prototype);
+
+// Athelete.prototype = {
+//     constructor : Athelete
+// }
+
+const gordieHowe = new Athelete('Gordie Howe', 52);
+
+console.log(gordieHowe);
