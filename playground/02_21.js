@@ -1,16 +1,16 @@
 // REGULAR EXPRESSIONS
 
     // Test
-        // let myStr = 'Hello world';
-        // let myRegex = /Hello/;
+        let myStr = 'Hello world';
+        let myRegex = /Hello/;
 
-        //  console.log(myRegex.test(myStr));
+         console.log(myRegex.test(myStr));
     
     //Match
-        // let newStr = 'Hello World!';
-        // let regEx = /Hello/i;
+        let newStr = 'Hello World!';
+        let regEx = /Hello/i;
 
-        // console.log(newStr.match(regEx));
+        console.log(newStr.match(regEx));
 
     // Character Class
         // let myStr = 'Beware of bugs in the above code; I have only proved it correct, not tried it';
@@ -121,3 +121,6 @@
 
     console.log(arr);
     console.log(newArr);
+
+
+    

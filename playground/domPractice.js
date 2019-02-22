@@ -15,6 +15,9 @@ function loadEventListeners(){
     document.addEventListener('click',removeItem)
     //alerting what the parent element is
     document.addEventListener('click', getParent)
+
+    // clear the whole page
+    document.addEventListener('click', clearPage)
 }
 
 
@@ -56,19 +59,9 @@ function getParent(e){
     console.log(e.target);
 }
 
-function Person(name, age){
-    this.name = name;
-    this.age = age;
+
+function clearPage(e){
+    if(e.target.id === 'removeAll'){
+        console.log('true');
+    }
 }
-
-function Athelete(){};
-
-Athelete.prototype = Object.create(Person.prototype);
-
-// Athelete.prototype = {
-//     constructor : Athelete
-// }
-
-const gordieHowe = new Athelete('Gordie Howe', 52);
-
-console.log(gordieHowe);
