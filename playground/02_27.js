@@ -1,7 +1,7 @@
 // ASYNC Programming / XHR/FETCH, PROMISES, ETC...
 
 // AJAX
-
+console.log('test');
 const button = document.getElementById('button');
 
 button.addEventListener('click', loadData);
