@@ -65,3 +65,6 @@ function clearPage(e){
         console.log('true');
     }
 }
+
+
+console.log('test');
