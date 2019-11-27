@@ -36,19 +36,52 @@ function capitalize(str){
 
 // Max character
 function maxCharacter(str){
-    const charMap = {};
-    str.split('').forEach(function(char){
-        if(charMap[char]){
-            charMap[char]++
-        } else {
-            charMap[char] = 1;
-        }
-    });
-    console.log(charMap);
+  const charMap = {};
+  let maxNum = 0;
+  let maxChar = '';
+
+  str.split('').forEach(function(char){
+    if(charMap[char]) {
+        charMap[char]++;
+    } else {
+        charMap[char] = 1;
+    }
+  })
+  //console.log(charMap)
+
+  for (let char in charMap){
+    if(charMap[char] > maxNum){
+        maxNum = charMap[char];
+        maxChar = char;
+    }
+  }
+
+  return maxChar;
+
 }
 
 
 // Call Function
-const output = maxCharacter('javascript');
+const output = maxCharacter('javascripttttttt');
 
-console.log(maxCharacter());
+//console.log(maxCharacter(output));
+
+
+
+// FIZZBUZZ
+
+function fizzBuzz(){
+ for(let i = 1; i <= 100; i++){
+    if( i % 3 === 0 && i % 5===0 ){
+        console.log(`${i} fizzbuzz!`)
+    } else if(i%3 === 0){
+        console.log('3, fizz')
+    } else if(i%5===0){
+        console.log('5, buzz');
+    }
+ } 
+}
+
+fizzBuzz()
+
+console.log(15%3);
