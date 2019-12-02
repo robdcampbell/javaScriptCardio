@@ -97,3 +97,11 @@ function setGameOver() {
   }
 
 console.log(randomNum)
+
+
+
+//// CONTINUE HERE:  
+// https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math
+
+
+console.log(typeof(typeof(typeof(true))));
