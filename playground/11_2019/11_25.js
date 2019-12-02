@@ -2,12 +2,12 @@
 
 
 /// Things to consider/practice/burn into memory:
-    // reduce()     --- combines all array items to create one total value
-    // map()        --- returns a new array, with 'edit' applied to each array item
-    // substring()  --- 1 Arg: will return 'rest' of string from index provided in args 
-    // replace()    --- 
-    //              ---
-
+    // reduce()       --- combines all array items to create one total value
+    // map()          --- returns a new array, with 'edit' applied to each array item
+    // substring()    --- 1 Arg: will return 'rest' of string from index provided in args 
+    // replace()      --- 
+    // for(x in y)    --- used to loop through an Object (not an array)
+    // for (x of y)   --- used to loop through an Array  
 
 
 // CARDIO:
@@ -44,7 +44,9 @@ function maxCharacter(str){
             charMap[char] = 1;
         }
     });
-    console.log(charMap);
+    
+
+
 }
 
 
