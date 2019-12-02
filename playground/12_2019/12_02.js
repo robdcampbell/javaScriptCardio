@@ -16,13 +16,17 @@
 
 // Number Guessing Game
 
-const randomNum = Math.floor(Math.random()*10)+1;
+// found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash
+
+let randomNum = Math.floor(Math.random()*100)+1;
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
 const lowOrHi = document.querySelector('.lowOrHi');
+const resultsDiv = document.querySelector('.resultParas');
 
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
+
 
 let guessCount = 1;
 let resetButton;
@@ -67,7 +71,7 @@ function setGameOver() {
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
     resetButton.textContent = 'Start new game';
-    document.body.appendChild(resetButton);
+    resultsDiv.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
   }
 
@@ -88,7 +92,8 @@ function setGameOver() {
   
     lastResult.style.backgroundColor = 'white';
   
-    randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNum = Math.floor(Math.random() * 100) + 1;
+    console.log(randomNum)
   }
 
 console.log(randomNum)
