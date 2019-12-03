@@ -3,7 +3,7 @@
 // replace()
 // split()
 // Number()
-// 
+//  ARRAY STUFF:   pop(), push(), shift(), unshift()
 
 // 
 
@@ -12,9 +12,11 @@
 // const sub = myString.toLowerCase().replace('he','Ro');
 // console.log(sub);
 
-const myArr = [1,2,3,4,5];
+const myArr = ['Dogs', 'Cats', 'Emus', 'AArdvarks']
 
-myArr[0] = 'Pterodactyl';
+// myArr.pop()
+// myArr.unshift('Pterodactyls')
+myArr.push('Velociraptors')
 
 console.log(myArr);
 
