@@ -105,3 +105,5 @@ console.log(randomNum)
 
 
 console.log(typeof(typeof(typeof(true))));
+console.log('test');
+
