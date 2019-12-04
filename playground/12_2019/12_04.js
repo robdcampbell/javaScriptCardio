@@ -43,18 +43,24 @@ function result() {
   const yItem = randomValueFromArray(insertY);
   const zItem = randomValueFromArray(insertZ);
 
-  newStory = newStory.replace(':insertx:',xItem);
-  newStory = newStory.replace(':inserty:',yItem);
-  newStory = newStory.replace(':insertz:',zItem);
+  // replace with a regular expression
+  newStory = newStory.replace(/:insertx:/g, xItem);
+  newStory = newStory.replace(/:inserty:/g, yItem);
+  newStory = newStory.replace(/:insertz:/g, zItem);
 
-  console.log(newStory);
+  if(customName.value !== '') {
+    let name = customName.value;
+    newStory = newStory.replace(/Bob/g, name)
+  }
 
   if(document.getElementById("uk").checked) {
     let weight = Math.round(300);
     let temperature =  Math.round(94);
 
+    
+
   }
 
-  story.textContent = '';
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
