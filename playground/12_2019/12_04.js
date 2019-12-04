@@ -44,9 +44,9 @@ function result() {
   const zItem = randomValueFromArray(insertZ);
 
   // replace with a regular expression
-  newStory = newStory.replace(/:insertx:/g, xItem);
-  newStory = newStory.replace(/:inserty:/g, yItem);
-  newStory = newStory.replace(/:insertz:/g, zItem);
+  newStory = newStory.replace(/:insertx:/g, xItem).replace(/:inserty:/g, yItem).replace(/:insertz:/g, zItem);
+  //newStory = newStory.replace(/:inserty:/g, yItem);
+  //newStory = newStory.replace(/:insertz:/g, zItem);
 
   if(customName.value !== '') {
     let name = customName.value;
@@ -54,10 +54,11 @@ function result() {
   }
 
   if(document.getElementById("uk").checked) {
-    let weight = Math.round(300);
-    let temperature =  Math.round(94);
+    let weight = Math.round(300/14) + ' stone';
+    let temperature =  Math.round((94 - 32) * 5/9) + ' centigrade';
 
-    
+    newStory = newStory.replace(/94 fahrenheit/g, temperature);
+    newStory = newStory.replace(/300 pounds/g, weight);
 
   }
 
