@@ -20,5 +20,9 @@ myArr.push('Velociraptors')
 
 console.log(myArr);
 
+const emusIndex = myArr.indexOf('Emus');
+
+console.log(myArr.splice(emusIndex,1));
+console.log(myArr);
 
 
