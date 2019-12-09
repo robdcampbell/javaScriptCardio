@@ -27,4 +27,9 @@ closeBtn.onclick = function() {
   panel.parentNode.removeChild(panel);
 }
 
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+
 */
+
+
