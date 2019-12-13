@@ -21,8 +21,18 @@ for(let i = 1; i <= 5; i++ ){
 btn.addEventListener('click',function(e){
     const btnClass = e.target.getAttribute('class');
 
-    btnClass === 'dark' ? btn.setAttribute('class', 'light') : btn.setAttribute('class', 'dark');
+  
 
+    if(btnClass === 'dark'){
+        btn.setAttribute('class', 'light');
+        btn.textContent = 'Lighten';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+
+    } else {
+        btn.setAttribute('class', 'dark');
+        btn.textContent = 'Darken';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+    }
 
 
     console.log(btn.getAttribute('class'));
