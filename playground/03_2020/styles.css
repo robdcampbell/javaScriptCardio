@@ -1,11 +1,20 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    
 }
 
 
 body {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+    background-color:lightblue;
+    border-bottom: 1px #ccc solid;
+    padding: 1rem;
+    margin-bottom: 1rem;;
+
+}
 
 
