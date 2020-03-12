@@ -1,4 +1,4 @@
-console.log('Also a test')
+//console.log('Also a test')
 
 const string = 'This is a string';
 
@@ -6,6 +6,7 @@ const string = 'This is a string';
 // 01) __________________________
 
 //Reverse a string; (array methods, for/forEach, recursion)
+
 function reverseStr(str){
     //Array methods
         // let strArr = Array.from(str).reverse().join('');
@@ -42,8 +43,14 @@ function reverseStr(str){
         }
       }
 
-console.log(recursionReverse(string));
+//console.log(recursionReverse(string));
 //console.log(reverseStr(string));
 
 
 // 02) __________________________
+
+// Sort an array
+
+let myArr = [2,4,100,2,1,23,77,9];
+
+console.log(myArr.sort((a,b)=> a-b));
