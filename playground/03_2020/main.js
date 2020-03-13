@@ -54,3 +54,8 @@ function reverseStr(str){
 let myArr = [2,4,100,2,1,23,77,9];
 
 console.log(myArr.sort((a,b)=> a-b));
+
+
+// 03) Title-Case a string
+
+
