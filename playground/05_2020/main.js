@@ -9,7 +9,7 @@ rollCall('Rob','Like a Million')
 
 const name = 'Rob';
 function reverseStr(val){
-    
+      
     // 1) Built-in array methods
             //return Array.from(val).reverse().join('');
         // OR
@@ -46,9 +46,9 @@ function reverseStr(val){
     console.log(reverseString2('hello'));
 
 
-
-
 //console.log(reverseStr2('Pterodactyl'));
 //
+
+
 
 
