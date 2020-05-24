@@ -127,8 +127,17 @@
         // noOdds([718, 991, 449, 644, 380, 440]) ➞ [718, 644, 380, 440]
 
     //My solution using filter
-        function noOdds(arr){
-            return arr.filter(val=>val%2==0);
-        }   
+    //     function noOdds(arr){
+    //         return arr.filter(val=>val%2==0);
+    //     }   
 
-       console.log(noOdds([718, 991, 449, 644, 380, 440]));
+    //    console.log(noOdds([718, 991, 449, 644, 380, 440]));
+
+
+
+// Array assignment
+
+const arr = [0,1,2,3,4];
+
+arr[0] = 'new';
+console.log(arr);
