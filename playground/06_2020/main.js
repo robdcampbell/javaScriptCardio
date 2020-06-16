@@ -105,4 +105,7 @@ let userTwo = new User('yoshi@mariocorp.com','Yoshi');
 // userOne.login();
 // userTwo.logout();
 
+// METHOD CHAINING; made possible by: return this, in each method.
+// You are essentially returning the object instance and 
+// calling the method from the object using dot notation
 userOne.login().updateScore().updateScore().logout();
