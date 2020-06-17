@@ -97,15 +97,37 @@ class User {
     }
 }
 
-let userOne = new User('ryu@ninjas.com','Ryu');
-let userTwo = new User('yoshi@mariocorp.com','Yoshi');
 
 //https://www.youtube.com/watch?v=hy-C4NY7A_8&list=PL4cUxeGkcC9i5yvDkJgt60vNVWffpblB7&index=6
 
 // userOne.login();
 // userTwo.logout();
 
-// METHOD CHAINING; made possible by: return this, in each method.
-// You are essentially returning the object instance and 
-// calling the method from the object using dot notation
+/*
+ METHOD CHAINING; made possible by: return this, in each method.
+ You are essentially returning the object instance and 
+  calling the method from the object using dot notation
 userOne.login().updateScore().updateScore().logout();
+*/
+
+// Class inheritance
+
+class Admin extends User {
+    deleteUser(user){
+        users = users.filter(u => (u.email !== user.email));
+        return `${user.name} deleted!`
+    }
+}
+
+let userOne = new User('ryu@ninjas.com','Ryu');
+let userTwo = new User('yoshi@mariocorp.com','Yoshi');
+
+let users = [userOne,userTwo];
+
+let adminOne = new Admin('rob@rob.com','Rob');
+console.log(adminOne);
+console.log(users);
+
+console.log(adminOne.deleteUser(userOne));
+
+console.log(users);
