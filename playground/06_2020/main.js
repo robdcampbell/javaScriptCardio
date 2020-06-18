@@ -77,6 +77,7 @@ const userOne = {
 // - set the value of 'this' to be the new empty object
 // - calls the constructor method
 
+/*
 class User {
     constructor(email, name){
         this.email = email;
@@ -97,7 +98,7 @@ class User {
         return this;
     }
 }
-
+*/
 
 //https://www.youtube.com/watch?v=hy-C4NY7A_8&list=PL4cUxeGkcC9i5yvDkJgt60vNVWffpblB7&index=6
 
@@ -143,22 +144,97 @@ userOne.login().updateScore().updateScore().logout();
 
 // Using object contructors intead of classes:_______________________________
 
-function Person(email,name){
+function User(email,name){
     this.email = email;
     this. name = name;
     this.online = false;
 }
 
-Person.prototype.login = function(){
+User.prototype.login = function(){
     this.online = true;
     console.log(`${this.email} has logged in.`);
 }
-Person.prototype.logout = function(){
+User.prototype.logout = function(){
     this.online = false;
     console.log(`${this.email} has logged out.`);
 }
-let personOne = new Person('ryu@ninjas.com','Ryu');
-let personTwo = new Person('yoshi@mariocorp.com','Yoshi');
 
-console.log(personOne.login());
+function Admin(...args) {
+    User.apply(this, args);
+    this.role = 'super admin';
+}
 
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.deleteUser = function(u){
+    users = users.filter(user => {
+        return user.email !== u.email;
+    })
+};
+
+let userOne = new User('ryu@ninjas.com','Ryu');
+let userTwo = new User('yoshi@mariocorp.com','Yoshi');
+let admin = new Admin('shaun@ninjas.com','Shaun')
+
+let users = [userOne, userTwo, admin];
+
+console.log(admin);
+
+
+// practice again
+
+/* 1) create class
+    - create new instance
+    - create different class that inherits from another class
+    
+   - 2) Create object contructor (prototype inheritance)
+       - create new instance
+        - create different object that inherits from another class
+    
+*/
+
+function Car(make, model, year){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.greeting = function(){
+        return `Hey! Nice ${this.make}!`
+    }
+}
+
+Car.prototype.carInfo = function (){
+    return `${this.year} ${this.make} ${this.model}`
+}
+
+const jeep = new Car('Jeep', 'Cherokee', 2000);
+
+function GovVehicle(...args){
+    Car.apply(this, args);
+    this.parkAnywhere = true;
+
+}
+GovVehicle.prototype = Object.create(Car.prototype);
+
+const policeCar = new GovVehicle('Chevrolet','Impala','2019');
+
+
+console.log(jeep.greeting())
+console.log(jeep.carInfo());
+console.log(policeCar);
+
+
+class Vehicle {
+    constructor(wheels, seats, color){
+        this.wheels = wheels;
+        this.seats = seats;
+        this.color = color;
+    }
+
+    vehicleInfo(){
+        return `This ${color} vehicle has ${wheels} wheels and ${seats} seats.`;
+    }
+}
+
+
+const motorcycle = new Vehicle(2,1,'Black');
+
+console.log(motorcycle.vehicleInfo());
