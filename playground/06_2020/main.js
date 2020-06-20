@@ -238,3 +238,11 @@ class Vehicle {
 const motorcycle = new Vehicle(2,1,'Black');
 
 console.log(motorcycle.vehicleInfo());
+
+/*
+Built in Object functions:
+
+apply() -https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+bind()
+
+*/
