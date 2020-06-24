@@ -1,6 +1,6 @@
 // type of 'null' -> string
 // delete all elements in an array 
-//
+// How many vowels? (rexEx)
 
 /*
 const arrEx = [1,2,3,4]
@@ -13,12 +13,20 @@ const [a, ...b,c] = [1,2,3,4,5,6];
 console.log(`${a}, ${b}, and ${c}`);
 */
 
-// How Many Vowels?
+// How Many Vowels? _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+	/*
+		console.log('test');
 
-console.log('test');
+		function countVowels(str) {
+			return str.split('').filter((char)=> char.match(/[aeiou]/gi)).length;
+		}
+		console.log(countVowels('feet'));
+	*/
+// RegEx - quatifying elipses? _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-function countVowels(str) {
-	return str.split('').filter((char)=> char.match(/[aeiou]/gi)).length;
-}
+		// greedy and lazy quantifiers
 
-console.log(countVowels('feet'));
+const REGEXP = /\.{3,}/ig
+
+console.log(('thissss...and that....').match(REGEXP));
+
