@@ -26,7 +26,53 @@ console.log(`${a}, ${b}, and ${c}`);
 
 		// greedy and lazy quantifiers
 
+		/*
 const REGEXP = /\.{3,}/ig
 
 console.log(('thissss...and that....').match(REGEXP));
+		*/
 
+// ADDING ALL THE CUBE'D NUMS IN AN ARRAY:
+
+/* My answer:
+function sumOfCubes(nums) {
+	return nums.length === 0? 0 : nums.map((num)=> num**3).reduce((a,b)=> a+b);
+}
+
+// Short Answer, just reduce: 
+	function sumOfCubes(nums) {
+	return nums.reduce((p,c) => p + Math.pow(c, 3), 0);
+}
+
+// OR
+const sumOfCubes = nums => {
+	return nums.reduce((sum, num) => {
+		return sum + Math.pow(num,3);
+	},0)
+}
+
+
+*/ 
+
+
+// RETURN THE FACTORIAL:
+
+/*Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
+
+*/
+
+function factorial(int) {
+	if(int === 1){
+		return int;
+	} else {
+		return factorial(int-1) * int;
+	}
+}
+
+
+//Short syntax:
+function factorial(int) {
+	return int === 1 ? int : factorial(int-1) * int ;
+}
+
+console.log(factorial(3));
