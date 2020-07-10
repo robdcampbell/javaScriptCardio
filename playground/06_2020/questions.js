@@ -72,7 +72,28 @@ function factorial(int) {
 
 //Short syntax:
 function factorial(int) {
-	return int === 1 ? int : factorial(int-1) * int ;
+	return int === 0 ? 1 : factorial(int-1) * int ;
 }
 
 console.log(factorial(3));
+
+
+
+// Creating a range using .from()
+
+/* 
+const arrayOperation = (x, y, n) =>
+	Array.from({length: y-x+1}, (_, i) => x+i).filter(v => !(v%n));
+
+*/
+
+
+// 2-layer array with Object.Keys() and Object.values()
+
+/*
+input object and create two arrays within the object array -  one for the keys and one for the values.
+*/
+
+function keysAndValues(obj) {
+	return [[...Object.keys(obj)],[...Object.values(obj)]];
+}
