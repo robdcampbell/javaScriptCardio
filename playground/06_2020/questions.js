@@ -60,23 +60,23 @@ const sumOfCubes = nums => {
 /*Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
 
 */
+	/*
+		function factorial(int) {
+			if(int === 1){
+				return int;
+			} else {
+				return factorial(int-1) * int;
+			}
+		}
 
-function factorial(int) {
-	if(int === 1){
-		return int;
-	} else {
-		return factorial(int-1) * int;
-	}
-}
 
+		//Short syntax:
+		function factorial(int) {
+			return int === 0 ? 1 : factorial(int-1) * int ;
+		}
 
-//Short syntax:
-function factorial(int) {
-	return int === 0 ? 1 : factorial(int-1) * int ;
-}
-
-console.log(factorial(3));
-
+		console.log(factorial(3));
+	*/
 
 
 // Creating a range using .from()
@@ -93,7 +93,16 @@ const arrayOperation = (x, y, n) =>
 /*
 input object and create two arrays within the object array -  one for the keys and one for the values.
 */
+		/*
+		function keysAndValues(obj) {
+			return [[...Object.keys(obj)],[...Object.values(obj)]];
+		}
+		*/
 
-function keysAndValues(obj) {
-	return [[...Object.keys(obj)],[...Object.values(obj)]];
+// USING AN ARRAY.FROM TO CREATE A MAPPED ARRAY OR RANGE
+
+function range(num){
+	return Array.from(Array(num),(e,i)=>i+1)
 }
+
+console.log(range(20)); // Will print a range from 1-20
