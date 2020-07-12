@@ -55,7 +55,7 @@ const sumOfCubes = nums => {
 */ 
 
 
-// RETURN THE FACTORIAL:
+// RETURN THE FACTORIAL:_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 /*Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
 
@@ -79,7 +79,7 @@ const sumOfCubes = nums => {
 	*/
 
 
-// Creating a range using .from()
+// Creating a range using .from() _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 /* 
 const arrayOperation = (x, y, n) =>
@@ -99,7 +99,7 @@ input object and create two arrays within the object array -  one for the keys a
 		}
 		*/
 
-// USING AN ARRAY.FROM TO CREATE A MAPPED ARRAY OR RANGE
+// USING AN ARRAY.FROM TO CREATE A MAPPED ARRAY OR RANGE_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 			/*
 			function range(num){
 				return Array.from(Array(num),(e,i)=>i+1)
@@ -108,19 +108,67 @@ input object and create two arrays within the object array -  one for the keys a
 			console.log(range(20)); // Will print a range from 1-20
 			*/
 
-// Using .every to test if both the value and the index or either Odd or even
 
 
-const arr = [1,1,1,1,1,1,1,1,1,1]
+
+// Using .every to test if both the value and the index or either Odd or even_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+
+	//const arr = [1,1,1,1,1,1,1,1,1,1]
 
 //console.log(arr.every((num=>num)));
+/*
+		function allOdd(arr){
+			return arr.map((num,i)=>
+				num%2=== 0 && i%2=== 0? "Even": 'nope!')
+		}
 
-function allOdd(arr){
-	return arr.every(num=>num%2 !== 0);
-}
+				const oddArr = [0];
+				const mixed =  [1,3,5,9, 10, 11,13]
 
-const oddArr = [1,3,5,9,11,13];
-const mixed =  [1,3,5,9, 10, 11,13]
+				console.log(allOdd(oddArr));
+				console.log(allOdd(mixed));
+*/
 
-console.log(allOdd(oddArr));
-console.log(allOdd(mixed));
+// TOTAL SUM OF BUDGETS_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+/*
+		function getBudgets(objArr){
+			return objArr.map(obj => obj['budget']).reduce((a,b)=>a+b);
+				
+				Object.entries()[0];
+		}
+
+
+		console.log(getBudgets([
+			{ name: "John", age: 21, budget: 23000 },
+			{ name: "Steve",  age: 32, budget: 40000 },
+			{ name: "Martin",  age: 16, budget: 2700 }
+		]))
+*/
+
+
+// ADDING SUFFIXES : CLOSURES _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+  /*
+  	EXAMPLES:
+  	add_ly = add_suffix("ly")
+
+	add_ly("hopeless") ➞ "hopelessly"
+	add_ly("total") ➞"totally"
+
+	add_less = add_suffix("less")
+
+	add_less("fear") ➞ "fearless"
+	add_less("ruth") ➞ "ruthless"
+  */
+
+  // Using Closures (Prefix, suffix):
+		function add_suffix(suffix) {
+			return function(pre){
+				return `${pre}${suffix}`;
+			}
+		}
+
+		const firstWord = add_suffix('er')
+		console.log(firstWord('Fast'));
