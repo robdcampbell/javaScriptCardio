@@ -100,9 +100,27 @@ input object and create two arrays within the object array -  one for the keys a
 		*/
 
 // USING AN ARRAY.FROM TO CREATE A MAPPED ARRAY OR RANGE
+			/*
+			function range(num){
+				return Array.from(Array(num),(e,i)=>i+1)
+			}
 
-function range(num){
-	return Array.from(Array(num),(e,i)=>i+1)
+			console.log(range(20)); // Will print a range from 1-20
+			*/
+
+// Using .every to test if both the value and the index or either Odd or even
+
+
+const arr = [1,1,1,1,1,1,1,1,1,1]
+
+//console.log(arr.every((num=>num)));
+
+function allOdd(arr){
+	return arr.every(num=>num%2 !== 0);
 }
 
-console.log(range(20)); // Will print a range from 1-20
+const oddArr = [1,3,5,9,11,13];
+const mixed =  [1,3,5,9, 10, 11,13]
+
+console.log(allOdd(oddArr));
+console.log(allOdd(mixed));
