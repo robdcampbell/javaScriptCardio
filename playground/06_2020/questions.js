@@ -150,25 +150,61 @@ input object and create two arrays within the object array -  one for the keys a
 
 // ADDING SUFFIXES : CLOSURES _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-  /*
-  	EXAMPLES:
-  	add_ly = add_suffix("ly")
+	/*
+		EXAMPLES:
+		add_ly = add_suffix("ly")
 
-	add_ly("hopeless") ➞ "hopelessly"
-	add_ly("total") ➞"totally"
+		add_ly("hopeless") ➞ "hopelessly"
+		add_ly("total") ➞"totally"
 
-	add_less = add_suffix("less")
+		add_less = add_suffix("less")
 
-	add_less("fear") ➞ "fearless"
-	add_less("ruth") ➞ "ruthless"
-  */
+		add_less("fear") ➞ "fearless"
+		add_less("ruth") ➞ "ruthless"
+	*/
 
-  // Using Closures (Prefix, suffix):
-		function add_suffix(suffix) {
-			return function(pre){
-				return `${pre}${suffix}`;
+	// Using Closures (Prefix, suffix):
+		//MY ANSWER:
+			/*
+			function add_suffix(suffix) {
+				return function(pre){
+					return `${pre}${suffix}`;
+				}
 			}
+
+			const firstWord = add_suffix('er')
+			console.log(firstWord('Fast'));
+			*/
+
+// Remove Trailing and Leading Zeros _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _	
+
+		// Math.abs(), Number(), 
+
+		/*
+		examples:
+		removeLeadingTrailing("230.000") ➞ "230"
+
+		removeLeadingTrailing("00402") ➞ "402"
+
+		removeLeadingTrailing("03.1400") ➞ "3.14"
+
+		removeLeadingTrailing("30") ➞ "30"
+		*/
+
+		//MY ANSWER
+		/*
+		function removeLeadingTrailing(n) {
+			return Math.abs(Number(n));
 		}
 
-		const firstWord = add_suffix('er')
-		console.log(firstWord('Fast'));
+		console.log(removeLeadingTrailing("03.1400"))
+		*/
+
+//  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _	
+//Count Ones in Binary Representation of Integer
+
+function countOnes(num){
+	return num.toString(2).split('').filter(n=>n==='1').length;
+}
+
+console.log(countOnes(999));
