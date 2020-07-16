@@ -221,13 +221,68 @@ detectBrowser("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101
 
 detectBrowser("Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; rv:11.0) like Gecko") ➞ "Internet Explorer"
 */
+		/*
+
+		function detectBrowser(userAgent) {
+			return (/Chrome/).test(userAgent) ? "Google Chrome"
+						:(/Firefox/).test(userAgent) ? "Mozilla Firefox"
+						:(/MSIE/).test(userAgent) 
+						||(/Explorer/).test(userAgent) ? "Internet Explorer"
+						: 0 ;
+		}
+		*/
+
+//  (Closures)_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/*
+Closures are functions that remember their lexical environments. Lexical environments mean the environment in which the function was declared. 
 
 
-function detectBrowser(userAgent) {
-	return (/Chrome/).test(userAgent) ? "Google Chrome"
-				:(/Firefox/).test(userAgent) ? "Mozilla Firefox"
-				:(/MSIE/).test(userAgent) 
-				||(/Explorer/).test(userAgent) ? "Internet Explorer"
-				: 0 ;
-}
+*/
+//example:
+	/*
+		function greetingMaker(salutation) {
+			return function closure(name) {
+			return salutation + ", " + name 	
+			}
+		}
+	*/
+
+// TEST:
+	/*
+		const greeting = greetingMaker("Hello")
+
+		Test.assertEquals(greeting("James"), "Hello, James")
+		Test.assertEquals(greeting("John"), "Hello, John")
+		Test.assertEquals(greeting("Jacob"), "Hello, Jacob")
+		Test.assertEquals(greeting("Joseph"), "Hello, Joseph")
+	*/
+
+	//  .filter(), .replace() _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+
+
+
+	function clearFog(str) {
+		return (/fog/).test(str) 
+			? str.split('')
+				.filter(char => !(/[fog]/gi).test(char))
+				.join('')
+			: "It's a clear day!";
+	}
+
+	/*
+		//OTHER ANSWER:
+
+		const clearFog = string => {
+			return /[fog]/gi.test(string)
+			? string.replace(/[fog]/gi, "")
+			: "It's a clear day!";
+		}
+	*/
+
+	console.log(clearFog("sky")) // "It's a clear day!"
+
+	console.log(clearFog("fogfogfffoooofftreesggfoogfog")) // "trees"
+	
+	console.log(clearFog("fogFogFogffffooobirdsandthebeesGGGfogFog")) // "birdsandthebees"
 
