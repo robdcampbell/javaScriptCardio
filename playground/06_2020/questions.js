@@ -223,7 +223,11 @@ detectBrowser("Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4
 */
 
 
-function detectBrowser(){
-	
+function detectBrowser(userAgent) {
+	return (/Chrome/).test(userAgent) ? "Google Chrome"
+				:(/Firefox/).test(userAgent) ? "Mozilla Firefox"
+				:(/MSIE/).test(userAgent) 
+				||(/Explorer/).test(userAgent) ? "Internet Explorer"
+				: 0 ;
 }
 
