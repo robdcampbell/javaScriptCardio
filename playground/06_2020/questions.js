@@ -257,11 +257,9 @@ Closures are functions that remember their lexical environments. Lexical environ
 		Test.assertEquals(greeting("Joseph"), "Hello, Joseph")
 	*/
 
-	//  .filter(), .replace() _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+	// CLEAR THE FOG: .replace(), .filter(), .match(), .test() _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-
-
-
+	/* // 	
 	function clearFog(str) {
 		return (/fog/).test(str) 
 			? str.split('')
@@ -269,6 +267,7 @@ Closures are functions that remember their lexical environments. Lexical environ
 				.join('')
 			: "It's a clear day!";
 	}
+	*/
 
 	/*
 		//OTHER ANSWER:
@@ -280,9 +279,56 @@ Closures are functions that remember their lexical environments. Lexical environ
 		}
 	*/
 
+	//TESTS
+
+	/*
 	console.log(clearFog("sky")) // "It's a clear day!"
 
 	console.log(clearFog("fogfogfffoooofftreesggfoogfog")) // "trees"
 	
 	console.log(clearFog("fogFogFogffffooobirdsandthebeesGGGfogFog")) // "birdsandthebees"
+	*/
 
+//   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+
+//  for (let i = 0; i < 3; i++){
+// 	 setTimeout(()=>{
+// 		console.log(i);
+// 	 },1000);
+//  }
+
+
+//  TRICKY JS QUESTIONS _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+
+// 1) -> what is the outcome of this console.log()?
+	/*
+		const x = [1,2,3];
+
+		x[-1] = -1;
+
+		console.log(x[x.indexOf(10000)]); 
+		// My guess: -1, or error?
+		// Answer = -1 (CORRECT!)
+	*/
+
+// 2) -> what will the return value be?
+	/*
+	const ary = [1,2,15,30,5,45,7];
+	ary.sort()
+	*/
+	// My answer: [1,15,2,30,45,5,7];, because JS will sort as a string.
+	// To sort in descending order: ary.sort((a,b)=>a>b)
+	// To sort in ascending order: ary.sort((a,b)=>a<b)
+	// Answer:
+
+// 3) -> what will the return value be?
+
+		let i = Number.MIN_VALUE;
+
+		console.log(i*i); // 0
+		console.log(i+1); // 1
+		console.log(i-1); // -1
+		console.log(i/i); // 1
+		
