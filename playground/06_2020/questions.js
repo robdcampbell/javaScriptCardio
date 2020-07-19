@@ -321,14 +321,60 @@ Closures are functions that remember their lexical environments. Lexical environ
 	// My answer: [1,15,2,30,45,5,7];, because JS will sort as a string.
 	// To sort in descending order: ary.sort((a,b)=>a>b)
 	// To sort in ascending order: ary.sort((a,b)=>a<b)
-	// Answer:
+	// Answer: (CORRECT)
 
 // 3) -> what will the return value be?
-
+		/*
 		let i = Number.MIN_VALUE;
 
 		console.log(i*i); // 0
 		console.log(i+1); // 1
 		console.log(i-1); // -1
 		console.log(i/i); // 1
+		*/
+
+		// My Answer: 0 (not correct)
+		// CORRECT: let i = Number.MIN_VALUE;
+
+// 4) -> what will the return value be?
 		
+		//let x = [1,2,3] + [4,5,6];
+
+		//console.log(x);
+		// My Answer: [[1,2,3],[4,5,6]] 
+		// Correct: "1,2,34,5,6" 
+
+		// Because '+' works on strings and numbers, so if the object cannot convert to a number, it will most likely default to converting to a string (or throw an error). 
+
+		//console.log([...[1,2,3],...[4,5,6]])
+		//console.log([1,2,3].concat([4,5,6]));
+
+// 5) -> what will the return value be?
+
+		//console.log(555555555555555555) // 18, 5's
+		// My Answer: 5555555555555556 // 14,5's and 6
+		// CORRECT Answer: 555555555555555600 // 15,5's, 6,0,0
+		// console.log(NUMBER.MAX_SAFE_INTEGER) -> can't go beyond this number, anything past this will convert to 0's
+
+// 6) -> what will the return value be?
+		/*
+			(function(){
+				let a = b = 100;
+			})();
+
+				//console.log(a); // error, undefined
+			console.log(b); // 100
+			console.log(a);
+		*/
+		/*
+		The IIFE creates  a block scope, and therefore do not exist outside the function - however since 'b' was declared the way it was, it became a global variable. To prevent that, declare as follows:
+			let b = 100;
+			let a = b;  
+		*/
+
+// 6) -> what will the return value be?
+
+console.log(NaN === NaN);
+
+// My Answer: False, because in Javascript NaN compared to anyhting is always false - even comparing to itself. 
+
