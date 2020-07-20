@@ -299,6 +299,31 @@ Closures are functions that remember their lexical environments. Lexical environ
 //  }
 
 
+//   Enharmonic Equivalents_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+
+	// My Answer:
+	/*
+		function getEquivalent(note) {
+			const arr = ['G','A','B','C','D','E','F','G'];
+			return note[0] === 'G' && note[1] === '#'
+						? 'Ab' 
+						:note[0] === 'G' && note[1] === 'b'
+						? 'F#'
+						: note[1] === '#'
+						? `${arr[arr.indexOf(note[0])+1]}b`
+						: `${arr[arr.indexOf(note[0])-1]}#`	
+		}
+	*/
+
+	//GOOD ANSWER USING AN OBJECT ISTEAD OF AN ARRAY
+
+	/*
+	const noteValues = {'C#': 'Db','D#': 'Eb','F#': 'Gb','G#': 'Ab','A#': 'Bb',  
+	'Db': 'C#','Eb': 'D#','Gb': 'F#','Ab': 'G#','Bb': 'A#'}
+	const getEquivalent = note => noteValues[note];
+	*/
+
 //  TRICKY JS QUESTIONS _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 
@@ -374,7 +399,107 @@ Closures are functions that remember their lexical environments. Lexical environ
 
 // 6) -> what will the return value be?
 
-console.log(NaN === NaN);
+		// console.log(NaN === NaN);
 
 // My Answer: False, because in Javascript NaN compared to anyhting is always false - even comparing to itself. 
 
+
+// 7) -> Difference between "let" and "var"
+
+/* 
+	My Answer: Scope. "Let" introduce in ES2015, and will be block scoped depending on where it is declared. Both "let" and "var" can be redefined, but will be block-scoped for "let" and function-scoped for "var".
+
+	"var" variables will get hoisted while "let" variables will not get hoisted.
+
+	EXAMPLE:
+
+	let x = function(){
+
+		if(true){
+			var v = 2;
+			let l = 1;
+		}
+
+		console.log(v); // will return '2', function-scoped
+
+		console.log(l); //will return 'error', block scoped
+	}
+	x();
+*/
+		
+
+
+// 8) -> Difference between "=="" and "==="
+	/*
+		Both are comparison operators.
+		==, just compares value (converts both to string)
+		===, is strict equality based on value and data type, i.e:
+			5 == '5', returns true
+			5 === '5', returns false
+	*/
+
+// 9) -> Difference between "let" and "const"
+	/*
+		"let" can be reassigned a new value, "const" cannot
+		"const" can be modified (ex: push another value onto an array), just not re-assigned.
+	*/
+
+// 10) -> Difference between "null" and "undefined"
+	/*
+		Both represent an empty value
+		null = nothing left
+		undefined = nothing was ever there
+
+		typeOf(undefined) === undefined
+		typeOf(null) === Object
+	*/
+
+// 11) -> Use of Arrow functions
+
+	/*
+		- lexical this in object-assigned methods, etc...
+	*/
+
+// 12) What is prototypal inheritance
+	/* 
+		Every object has a property called prototype. 
+		When you create other objects, newly created objs inherit the original object constructor. 
+		*/
+
+// 13) What is the difference between function declaration and function expression?
+
+
+
+/*
+	- - function declaration will be hoisted, function expression will not be. Because the expression is saved to variable, it will behave like a variable.
+
+
+		function funcD(){
+			console.log('function declaration')	
+		};
+
+		let funcE = function(){
+			console.log('function expression')
+		}
+
+*/
+
+// 14) What is a promise and why do we use it?
+		/*
+			When you want to make an Async call that has to wait for something to happen, and once it comes back, you throw a callBack function. (with the possibilty to nest more callbacks.)
+
+			** easier readabilty with method chaining, and error handling 
+		*/
+
+// 15) Set Timeout (puzzle)
+		/*
+		setTimeout(function(){
+			console.log('a)
+		},0)
+		console.log('b');
+		console.log('c');
+
+		answer = b,c, a (because of the event loop)
+		*/
+// 16) What is a closure and how do you use it?
+	
