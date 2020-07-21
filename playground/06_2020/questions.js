@@ -327,6 +327,13 @@ Closures are functions that remember their lexical environments. Lexical environ
 
 // Fibonacci Sequence_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
+		/*
+		Resources:
+		-https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e	
+		-https://www.mathsisfun.com/numbers/fibonacci-sequence.html
+			
+		*/
+
 	// ACTUALLY FACTORIAL, NOT FIBONACCI
 		/*
 			function fibonacci(n) {
@@ -358,7 +365,7 @@ Closures are functions that remember their lexical environments. Lexical environ
 			}
 			*/
 		// Looping 
-		
+
 		function fibonacci(num){
 			let a =1, b = 0, temp;
 
