@@ -324,6 +324,58 @@ Closures are functions that remember their lexical environments. Lexical environ
 	const getEquivalent = note => noteValues[note];
 	*/
 
+
+// Fibonacci Sequence_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+	// ACTUALLY FACTORIAL, NOT FIBONACCI
+		/*
+			function fibonacci(n) {
+				if(n === 0){
+					return 0;
+				} else {
+					return fibonacci(n-1) + n;
+				}
+			}
+		*/
+	// SEQUENCE IN AN ARRAY
+
+			/*
+
+			function fibonacci(n) {
+
+				if (n===1) 
+			{
+				return [0,1];
+			} 
+			else 
+			{
+				let s = fibonacci(n - 1);
+				s.push(s[s.length - 1] + s[s.length - 2]);
+				console.log(s)
+				return s;
+			}
+			
+			}
+			*/
+		// Looping 
+		
+		function fibonacci(num){
+			let a =1, b = 0, temp;
+
+			for(let i = 1; i < num; i++){
+				temp = a
+				a = a+b;
+				b = temp;
+			}
+			return a;
+		}
+			
+		
+
+//
+console.log(fibonacci(14));
+
+
 //  TRICKY JS QUESTIONS _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 
@@ -501,5 +553,8 @@ Closures are functions that remember their lexical environments. Lexical environ
 
 		answer = b,c, a (because of the event loop)
 		*/
+
 // 16) What is a closure and how do you use it?
+
+		// 8:30 :https://www.youtube.com/watch?v=yo3MJPcVJc8
 	
