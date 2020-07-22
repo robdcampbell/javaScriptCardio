@@ -365,7 +365,8 @@ Closures are functions that remember their lexical environments. Lexical environ
 			}
 			*/
 		// Looping 
-
+		
+		/*
 		function fibonacci(num){
 			let a =1, b = 0, temp;
 
@@ -376,12 +377,17 @@ Closures are functions that remember their lexical environments. Lexical environ
 			}
 			return a;
 		}
-			
+		*/	
 		
 
-//
-console.log(fibonacci(14));
+// console.log(fibonacci(14));
 
+
+// Convert Year to Century _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+// My Answer:
+function centuryFromYear(year) {
+	return Math.round((year%100) > 0 ? (year/100)+1 : (year/100));
+}
 
 //  TRICKY JS QUESTIONS _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
