@@ -389,6 +389,26 @@ function centuryFromYear(year) {
 	return Math.round((year%100) > 0 ? (year/100)+1 : (year/100));
 }
 
+
+// RegEx for validating date:_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+/* 
+	TEST Cases: 
+	assignment("12/1/1") ➞ false
+
+	assignment("1234/12/01") ➞ true
+
+	assignment("2012/1/1") ➞ false
+
+	assignment("2012/01/07") ➞ true
+*/
+
+// My Answer:
+	function assignment(d) {
+		return d.search(/^(\d{4})\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])$/) !== -1;
+	}
+
+
 //  TRICKY JS QUESTIONS _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 
