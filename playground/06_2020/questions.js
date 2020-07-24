@@ -404,10 +404,22 @@ function centuryFromYear(year) {
 */
 
 // My Answer:
+	/*
 	function assignment(d) {
 		return d.search(/^(\d{4})\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])$/) !== -1;
 	}
+	*/
 
+
+// RegEx for validating date using GROUPS AND RANGES:_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+// RESOURCE: https://www.smashingmagazine.com/2019/02/regexp-features-regular-expressions/#named-capture-groups
+
+/*example:
+
+let REGEXP = /(?<year>\d{4})\-(?<month>\d{2})\-(?<day>\d{2})/g
+
+*/
 
 //  TRICKY JS QUESTIONS _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
