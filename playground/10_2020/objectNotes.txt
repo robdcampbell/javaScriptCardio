@@ -1,0 +1,130 @@
+
+# Notes about the granular details of Objects 
+
+
+I)  OBJECT BASICS ********************************************
+
+
+**** ______________ ****
+
+In Javascript, almost "everything is an object.
+  - Booleans can be objects (if defined with the NEW keyword)
+  - Numbers can be objects (if defined with the NEW keyword)
+  - Strings can be objects (if defined with the NEW keyword)
+  - Dates are always objects 
+  - Maths are always objects 
+  - Regular expressions are always objects 
+  - Functions are always objects 
+  - Objects are always objects 
+
+* All JavaScript values, except primitives, are objects 
+
+
+**** ______________ ****
+
+__ JAVASCRIPT PRIMITIVES __
+A primitive value is a value that has no properties or methods
+A primitive data type is data that has a primitive value 
+
+JavaScript defines 5 types of primitive data types:
+  - string
+  - numbers
+  - boolean
+  - null 
+  - undefined 
+
+* Primitives are hardcoded and therefore cannot be changed. 
+  if x = 3.14, you can change the value of x. But you cannot change the value of 3.14 
+
+
+**** ______________ ****
+
+__ OBJECTS ARE VARIABLES __ 
+
+  Objects can contain single or many values. 
+  Values are writen as    name: value   pairs (name and value separated with a colon)
+
+  EX:   var person = {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
+
+  * A JavaScript object is a collection of named values. 
+
+
+**** ______________ ****
+
+__ OBJECT PROPERTIES __
+
+- Named values in JavaScript objects, are called properties 
+ex: PROPERTY, VALUE:
+    firstName, "John"
+    lastName, "Doe"
+     age, 50
+    eyeColor, "blue"  
+
+**** ______________ ****
+
+
+__ OBJECT METHODS __
+
+Methods are actions that can be performed on objects. 
+
+Object properties can be both primitive values, other objects, and functions. 
+
+* An object method is an object property containing a function definition. 
+
+EX:
+    PROPERTY: VALUE: 
+    firstName: "John"
+    lastName: "Doe"
+    age: 50
+    eyeColor: "blue"
+    fullName: function(){return this.firstName + ' ' + this.lastName; }  
+
+JavaScript objects are containers for named values, called properties and methods. 
+
+**** ______________ ****
+
+__ CREATING A JAVASCRIPT OBJECT __
+With JavaScript, you can define and create you own objects 
+
+Different ways to create new objects:
+  - Define and create a single object, using an object literal, 
+  - Define and craete a sinle object, with the keyword NEW
+  - Define and object constructor, and then craete objects of the constructed type.  
+
+  (Objects can also be created using:  Object.create() ).
+
+
+**** ______________ ****
+
+__ USING AN OBJECT LITERAL __
+
+Using an object literal, you define and create an object in one statement. 
+
+An object literal is a list of name:value pairs (age:50) inside curly braces {}.
+
+EX:
+  1) const person = {firstName : "John", lastName: "Doe", age: 50};
+
+  // Below is less common, don't use. 
+  2) const person = new Object();
+          person.firstName = "John";
+          person.lastName = "Doe";
+          person.age = 50;
+
+**** ______________ ****
+
+__ JAVASCRIPT OBJECTS ARE MUTABLE __
+  They are addressed by refernce, not by value.
+
+  EX: if a person is an object, the following statement will not create a copy of a person:
+    const x = person;  // WILL NOT CREATE A copy
+
+
+
+I)  OBJECT PROPERTIES ********************************************
+
+
+
+**** ______________ ****
+
+
