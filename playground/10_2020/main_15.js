@@ -33,3 +33,13 @@ const customer1 = new Customer('Tom', 'Smith', '555-555-5555', 'Standard');
     };
 
 console.log(customer1.greeting());
+
+
+function ClubMember(firstName, lastName, membership, cost){
+  Person.call(this, firstName,lastName);
+  this.membership = membership;
+  this.cost = cost;
+}
+
+
+
