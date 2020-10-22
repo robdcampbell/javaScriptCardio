@@ -1,3 +1,76 @@
+
+
+
+
+// Callbacks _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+const posts = [
+  {title: 'Post One', body: 'This is post one'},
+  {title: 'Post Two', body: 'This is post two'}
+]
+  // SYNCHRONOUS 
+    // function createPost(post){
+    //   setTimeout(()=>{
+    //     posts.push(post)
+    //   }, 2000)
+    // }
+
+    // function getPosts(){
+    //   setTimeout(()=>{
+    //     let output = '';
+    //     posts.forEach((post)=>{
+    //       output += `<li>${post.title}</li>`
+    //     });
+    //     document.body.innerHTML = output;
+    //   },1000)
+    // }
+
+
+    // createPost({title:'Post Three', body: 'This is post three'});
+    // getPosts();
+
+
+// ASYNCHRONOUS 
+
+  function createPost(post, callback){
+      setTimeout(()=>{
+        posts.push(post)
+        callback();
+      }, 2000)
+    }
+
+    function getPosts(){
+      setTimeout(()=>{
+        let output = '';
+        posts.forEach((post)=>{
+          output += `<li>${post.title}</li>`
+        });
+        document.body.innerHTML = output;
+      },1000)
+    }
+
+createPost({title:'Post Three', body: 'This is post three'},getPosts);
+
+
+
+
+
+
+// Data from an External API _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+// API, a structure agreement/way of commmunicating between 2 parties, usually through a structured request and a structured response. 
+
+// REST API : Representational State Transfer 
+  /*
+    - architectural style for designing networked applications
+    - Relies on a stateless, cliet-server protocol, almost always HTTP
+    - Treats server objects as resources that can be created or destroyed (CRUD)
+    - Can be used by virtuall any programming langauge 
+    - All API's have their own rules and structure
+  */
+
+
+
 // Data from an External API _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 // Add Event listener
