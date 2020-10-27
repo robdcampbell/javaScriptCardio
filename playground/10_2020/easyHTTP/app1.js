@@ -1,3 +1,5 @@
+// app.js Using XMLHttpRequests (not ES6, Fetch API, promises, etc...)
+
 const http = new easyHTTP;
 
 // GET Posts
