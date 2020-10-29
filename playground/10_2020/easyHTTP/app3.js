@@ -27,6 +27,23 @@ const data = {
   // .catch(err => console.log(err)) 
   
 // Delete User (DELETE)
-  http.delete('https://jsonplaceholder.typicode.com/users/7')
-  .then(data => console.log(data))
-  .catch(err => console.log(err)) 
+  // http.delete('https://jsonplaceholder.typicode.com/users/7')
+  // .then(data => console.log(data))
+  // .catch(err => console.log(err)) 
+
+
+
+  //fill array with 60000 elements
+const list = new Array(60000).join('1.1').split('.');
+ 
+function removeItemsFromList() {
+    var item = list.pop();
+ 
+    if (!item) {
+        removeItemsFromList();
+    }
+};
+ 
+removeItemsFromList();
+
+console.log("pterodactyl")
