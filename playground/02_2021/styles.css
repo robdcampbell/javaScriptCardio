@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: linear-gradient(#e7c4c4, #f72f20);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.app__wrapper {
+}
+
+.header__container {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #292929;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #fff solid 1px;
+  padding-bottom: 1rem;
+}
