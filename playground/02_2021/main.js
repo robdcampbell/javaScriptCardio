@@ -204,6 +204,7 @@ function rowSumOddNumbers(n) {
       console.log(persistence(4));
       console.log(persistence(25));
       console.log(persistence(999));
+      // good resource: https://dev.to/vadims4/persistence-algorithm-and-a-simple-introduction-to-reduce-1pn2
 */
 ////////////////////////////////////////////////
 //Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
