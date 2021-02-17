@@ -217,3 +217,42 @@ function rowSumOddNumbers(n) {
 */
 
 ////////////////////////////////////////////////
+
+const re = /^\d*[13579]$/;
+// const re = /^\d*[t]$/;
+
+function sortArray(array) {
+  // Return a sorted array.
+  // odd regEx means:
+  /*
+      -  ^-?\d*  : can start with a "-" (negative integer), a numerical boundary of any legth
+      - [13579]$  :  ends in an odd number
+    */
+  const reOdd = /^-?\d*[13579]$/;
+  const reEven = /^-?\d*[02468]$/;
+
+  const ordered = array.filter((num) => reOdd.test(num)).sort((a, b) => a - b);
+
+  const oddOrdered = [0, ...ordered];
+
+  return array.map((val) => {
+    if (reOdd.test(val)) {
+      oddOrdered.shift();
+      return oddOrdered[0];
+    } else {
+      return val;
+    }
+  });
+
+  // BETTER ANSWER:
+  /*
+    const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
+  return array.map((x) => x % 2 ? odd.shift() : x);
+  */
+}
+
+const arr1 = [1, 3, 2, 8, 5, 4];
+const arr2 = [1, 3, 5, 8, 0];
+
+console.log(sortArray(arr1));
+console.log(sortArray(arr2));
