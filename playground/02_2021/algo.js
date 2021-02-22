@@ -450,12 +450,13 @@ function sortArray(array) {
 // regEx: You need to write regex that will validate a password to make sure it meets the following criteria:
 
 //solution:
-
+/*
 function validate(password) {
   return /[a-zA-Z]{6,}/.test(password);
 
   //return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/.test(password);
 }
+*/
 
 // Explanation:
 /*
@@ -468,5 +469,18 @@ function validate(password) {
 
 */
 
-console.log(validate("1234"));
-console.log(validate("passwordTest"));
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+function trouble(x, t) {
+  let newArr = [...x];
+
+  for (i = 0; i < newArr.length; i++) {
+    if (newArr[i] + newArr[i + 1] === t) {
+      newArr.splice(i + 1, 1);
+      i--;
+    }
+  }
+  return newArr;
+}
+console.log(trouble([1, 2, 3, 4, 5], 3));
+console.log(trouble([4, 1, 1, 1, 1, 1, 1, 4], 2));
