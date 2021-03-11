@@ -67,3 +67,16 @@ main > h2 {
 .form__output > h4 {
   text-align: center;
 }
+.newNote {
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.newNote > button {
+  margin-left: 1rem;
+}
+
+.deleteNoteBtn {
+  background-color: red;
+}
