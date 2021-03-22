@@ -67,13 +67,14 @@ main > h2 {
 .form__output > h4 {
   text-align: center;
 }
-.newNote {
+.note__item {
   margin: 1rem 0;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  border-bottom: #c0c0c0 solid 1px;
 }
-.newNote > button {
+.note__item > button {
   margin-left: 1rem;
 }
 
