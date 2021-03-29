@@ -1,5 +1,9 @@
 // Third Max LeetCode: https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3231/
 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var thirdMax = function (nums) {
   let max = -Infinity;
   let second_max = -Infinity;
@@ -23,7 +27,6 @@ var thirdMax = function (nums) {
       third_max = nums[i];
     }
   }
-  return third_max != null ? third_max : max;
+  return third_max != -Infinity ? third_max : max;
 };
-
 console.log(thirdMax([1, 2, -2147483648]));
