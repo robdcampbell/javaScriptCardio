@@ -29,4 +29,26 @@ var thirdMax = function (nums) {
   }
   return third_max != -Infinity ? third_max : max;
 };
-console.log(thirdMax([1, 2, -2147483648]));
+// console.log(thirdMax([1, 2, -2147483648]));
+
+/*
+ ========================================================================
+ ========================================================================
+*/
+
+var canFormArray = function (arr, pieces) {
+  let newArr = [];
+  for (i = 0; i < arr.length; i++) {
+    for (j = 0; j < pieces.length; j++) {
+      if (arr[i] === pieces[j][0]) {
+        newArr.push(pieces[j]);
+      }
+    }
+  }
+
+  return arr.toString() === newArr.flat(Infinity).toString();
+};
+
+console.log(canFormArray([85], [[85]]));
+// [91,4,64,78]   ,  [[78],[4,64],[91]]
+// canFormArray([91, 4, 64, 78], [[78], [4, 64], [91]]);
