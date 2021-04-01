@@ -1,0 +1,91 @@
+/*
+============
+Global styles
+============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #353535;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  padding: 2rem 0;
+  border-bottom: #d6d6d6 solid 1px;
+}
+
+main {
+  min-height: 60vh;
+  padding: 2rem 0;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  border-top: #c0c0c0 solid 1px;
+}
+
+.wrapper {
+  padding: 2rem;
+}
+/*
+============
+Header
+============
+*/
+
+header > h1 {
+  /* margin-right: 2rem; */
+}
+
+/*
+============
+Main content
+============
+*/
+
+.note__add__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__output {
+  margin: 0 auto;
+  padding-top: 2rem;
+
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__output > h4 {
+  text-align: center;
+}
+.note__item {
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #c0c0c0 solid 1px;
+}
+.note__item > button {
+  margin-left: 1rem;
+}
+
+.deleteNoteBtn {
+  background-color: red;
+}
