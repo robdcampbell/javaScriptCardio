@@ -10,17 +10,20 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>April Sandbox | 2021</h1>
+        <h1>Notes. 04/2021</h1>
       </header>
 
       <main>
-        <form>
-          <h2>Notes:</h2>
-          <label for="">Add note:</label>
+        <form class="note__add__container">
+          <label for="">What's next?:</label>
           <input type="text" class="note__input" />
-          <button class="add__btn">Add note.</button>
+          <button class="add__btn">+</button>
         </form>
-        <ul class="notes__input"></ul>
+
+        <div class="form__output">
+          <h2>Notes:</h2>
+          <ul class="notes__output"></ul>
+        </div>
       </main>
     </div>
     <script src="01.js"></script>
