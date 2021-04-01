@@ -1,11 +1,10 @@
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
-let notesStorage;
 
 // Event Listeners:
 addBtn.addEventListener("click", addNote);
 
-// ONLOAD:
+// ONLOAD: with an IIFE
 document.onload = (function () {
   getItemsFromStorage();
   setNotesList();
@@ -13,16 +12,24 @@ document.onload = (function () {
 
 // ***  Get items from local storage
 function getItemsFromStorage() {
-  let items = localStorage.getItem("notes");
-  if (!items) {
-    console.log("None present!");
-    return;
+  let notesStorage = localStorage.getItem("notes");
+  if (!notesStorage) {
+    notesStorage = [];
+    console.log(notesStorage.length);
+    return notesStorage;
   }
-  console.log(items);
+  console.log(notesStorage);
+  return notesStorage;
 }
+// ***  Set items in local storage
+function setLocalStorage(newNote) {
+  getItemsFromStorage();
+  console.log(`TEST: ${notesStorage}`);
+}
+
 // *** Set current notes from local storage
 function setNotesList() {
-  console.log("setting the notes list");
+  //map through all items from localstorage and output to list
 }
 
 /*
@@ -34,7 +41,20 @@ function setNotesList() {
 function addNote(e) {
   e.preventDefault();
 
-  console.log(noteInput.value);
+  if (!noteInput.value) {
+    alert("You need to enter something!");
+    return;
+  }
+
+  let id = Date.now();
+  let text = noteInput.value;
+  let notesStorage = JSON.parse(getItemsFromStorage());
+
+  console.log(`ID:${id}, Text: ${text}`);
+  notesStorage.push({ id, text });
+
+  localStorage.setItem("notes", JSON.stringify(notesStorage));
+
   noteInput.value = "";
 }
 // append to the DOM
