@@ -3,7 +3,7 @@
 // 1 - Dynamically Add Date Heading
 // 2 - Create/Edit/Delete Functionality
 // 3 - Complete/Non-Complete status with check button
-// 4 -
+// 4 - Icon of a camper/wagooner
 
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
@@ -143,15 +143,25 @@ function notesActions(e) {
   }
 
   // EDIT/UPDATE FUNCTIONALITY
-  if (e.target.textContent === "update") {
-    noteContainer.firstChild.disabled = true;
-    e.target.textContent = "edit";
-    return;
-  }
   if (e.target.textContent === "edit") {
     noteContainer.firstChild.disabled = false;
     console.log(noteContainer.id);
     e.target.textContent = "update";
+    return;
+  }
+  if (e.target.textContent === "update") {
+    noteContainer.firstChild.disabled = true;
+    e.target.textContent = "edit";
+    let updatedNotes = notesStorage.map((note) => {
+      if (Number(note.id) === Number(noteContainer.id)) {
+        return {
+          id: Number(noteContainer.id),
+          text: noteContainer.firstChild.value,
+        };
+      }
+      return note;
+    });
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
     return;
   }
 }
