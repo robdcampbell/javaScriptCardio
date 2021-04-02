@@ -10,7 +10,7 @@ const noteInput = document.querySelector(".note__input");
 const notesList = document.querySelector(".notes__output");
 
 // Event Listeners:
-addBtn.addEventListener("click", addNote);
+addBtn.addEventListener("click", createNote);
 notesList.addEventListener("click", notesActions);
 // ONLOAD: with an IIFE
 document.onload = (function () {
@@ -38,32 +38,35 @@ function setNotesList() {
   }
 
   let notes = notesStorage;
-  //map through all items from localstorage and output to list
 
   notes.forEach((note) => {
-    // CREATE EACH NOTE: Description, edit/delete buttons.
-    const li = document.createElement("li");
-    const noteText = document.createElement("input");
-    noteText.value = note.text;
-    noteText.disabled = true;
-    const btnContainer = document.createElement("div");
-    btnContainer.classList = "btnContainer";
-    const editNoteBtn = document.createElement("button");
-    editNoteBtn.textContent = "edit";
-    editNoteBtn.classList = "editBtn";
-    const deleteNoteBtn = document.createElement("button");
-    deleteNoteBtn.classList = "deleteNoteBtn";
-    deleteNoteBtn.textContent = "delete";
-
-    li.appendChild(noteText);
-    btnContainer.appendChild(editNoteBtn);
-    btnContainer.appendChild(deleteNoteBtn);
-    li.appendChild(btnContainer);
-
-    li.id = note.id;
-    li.classList = "note__item";
-    notesList.appendChild(li);
+    addNoteToDOM(note);
   });
+}
+
+// 3) *** Add note to DOM
+function addNoteToDOM(note) {
+  const li = document.createElement("li");
+  const noteText = document.createElement("input");
+  noteText.value = note.text;
+  noteText.disabled = true;
+  const btnContainer = document.createElement("div");
+  btnContainer.classList = "btnContainer";
+  const editNoteBtn = document.createElement("button");
+  editNoteBtn.textContent = "edit";
+  editNoteBtn.classList = "editBtn";
+  const deleteNoteBtn = document.createElement("button");
+  deleteNoteBtn.classList = "deleteNoteBtn";
+  deleteNoteBtn.textContent = "delete";
+
+  li.appendChild(noteText);
+  btnContainer.appendChild(editNoteBtn);
+  btnContainer.appendChild(deleteNoteBtn);
+  li.appendChild(btnContainer);
+
+  li.id = note.id;
+  li.classList = "note__item";
+  notesList.appendChild(li);
 }
 
 /*
@@ -72,7 +75,7 @@ function setNotesList() {
 */
 
 // ON ADD:
-function addNote(e) {
+function createNote(e) {
   e.preventDefault();
 
   if (!noteInput.value) {
@@ -82,15 +85,19 @@ function addNote(e) {
 
   let id = Date.now();
   let text = noteInput.value;
+
+  const newNote = { id, text };
+
   noteInput.value = "";
   let notesStorage = getItemsFromStorage();
-  notesStorage.push({ id, text });
+  notesStorage.push(newNote);
   localStorage.setItem("notes", JSON.stringify(notesStorage));
 
   // append to list on the DOM
   const li = document.createElement("li");
-  const noteText = document.createElement("p");
-  noteText.textContent = text;
+  const noteText = document.createElement("input");
+  noteText.value = text;
+  noteText.disabled = true;
   const btnContainer = document.createElement("div");
   btnContainer.classList = "btnContainer";
   const editNoteBtn = document.createElement("button");
@@ -123,20 +130,28 @@ function notesActions(e) {
   let noteContainer = e.target.parentElement.parentElement;
   let notePara = noteContainer.firstChild;
   if (e.target.textContent === "delete") {
+    console.log("deleted");
     //DOM
     noteContainer.remove();
     // FROM STORAGE
-    console.log(notePara.textContent);
+    console.log(notePara);
     const updatedNotes = notesStorage.filter(
-      (note) => note.text !== notePara.textContent
+      (note) => note.text !== notePara.value
     );
 
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
   }
 
   // EDIT/UPDATE FUNCTIONALITY
+  if (e.target.textContent === "update") {
+    noteContainer.firstChild.disabled = true;
+    e.target.textContent = "edit";
+    return;
+  }
   if (e.target.textContent === "edit") {
-    console.log("edit");
-    let notePara = (noteContainer.firstChild.disabled = false);
+    noteContainer.firstChild.disabled = false;
+    console.log(noteContainer.id);
+    e.target.textContent = "update";
+    return;
   }
 }

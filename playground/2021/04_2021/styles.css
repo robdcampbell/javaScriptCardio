@@ -55,6 +55,9 @@ header > h1 {
   font-size: 9rem;
   padding: 0.5rem 0;
 }
+.dateToday {
+  display: block;
+}
 
 @media screen and (max-width: 500px) {
   header > h1 {
@@ -127,6 +130,7 @@ Main content
   border-bottom: #c0c0c0 solid 1px;
 }
 .note__item > input {
+  color: #9c9c9c;
   border: none;
   padding: 0;
   width: 80vw;
@@ -137,12 +141,12 @@ Main content
   background: none;
 }
 .note__item > input:enabled {
-  border-left: #262626 solid 1px;
-  padding-left: 0.5rem;
+  color: #353535;
 }
 
 .btnContainer > button {
   margin-top: 1rem;
+  color: #353535;
   cursor: pointer;
   background: none;
   border: #c0c0c0 solid 1px;
