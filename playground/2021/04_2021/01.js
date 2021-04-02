@@ -1,11 +1,17 @@
 // NOTES_LIST WITH LOCAL STORAGE.
 
+// 1 - Dynamically Add Date Heading
+// 2 - Create/Edit/Delete Functionality
+// 3 - Complete/Non-Complete status with check button
+// 4 -
+
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
 const notesList = document.querySelector(".notes__output");
 
 // Event Listeners:
 addBtn.addEventListener("click", addNote);
+notesList.addEventListener("click", notesActions);
 // ONLOAD: with an IIFE
 document.onload = (function () {
   getItemsFromStorage();
@@ -30,27 +36,34 @@ function setNotesList() {
     console.log("NONE");
     return;
   }
+
   let notes = notesStorage;
+  //map through all items from localstorage and output to list
+
   notes.forEach((note) => {
-    // CREATE EACH NOTE:
+    // CREATE EACH NOTE: Description, edit/delete buttons.
     const li = document.createElement("li");
-    const noteText = document.createElement("p");
-    noteText.textContent = note.text;
+    const noteText = document.createElement("input");
+    noteText.value = note.text;
+    noteText.disabled = true;
+    const btnContainer = document.createElement("div");
+    btnContainer.classList = "btnContainer";
     const editNoteBtn = document.createElement("button");
     editNoteBtn.textContent = "edit";
+    editNoteBtn.classList = "editBtn";
     const deleteNoteBtn = document.createElement("button");
+    deleteNoteBtn.classList = "deleteNoteBtn";
     deleteNoteBtn.textContent = "delete";
 
     li.appendChild(noteText);
-    li.appendChild(editNoteBtn);
-    li.appendChild(deleteNoteBtn);
+    btnContainer.appendChild(editNoteBtn);
+    btnContainer.appendChild(deleteNoteBtn);
+    li.appendChild(btnContainer);
 
     li.id = note.id;
     li.classList = "note__item";
     notesList.appendChild(li);
   });
-
-  //map through all items from localstorage and output to list
 }
 
 /*
@@ -69,20 +82,61 @@ function addNote(e) {
 
   let id = Date.now();
   let text = noteInput.value;
+  noteInput.value = "";
   let notesStorage = getItemsFromStorage();
   notesStorage.push({ id, text });
   localStorage.setItem("notes", JSON.stringify(notesStorage));
 
-  // append to the DOM
+  // append to list on the DOM
+  const li = document.createElement("li");
+  const noteText = document.createElement("p");
+  noteText.textContent = text;
+  const btnContainer = document.createElement("div");
+  btnContainer.classList = "btnContainer";
+  const editNoteBtn = document.createElement("button");
+  editNoteBtn.textContent = "edit";
+  editNoteBtn.classList = "editBtn";
+  const deleteNoteBtn = document.createElement("button");
+  deleteNoteBtn.classList = "deleteNoteBtn";
+  deleteNoteBtn.textContent = "delete";
 
-  noteInput.value = "";
+  li.appendChild(noteText);
+  btnContainer.appendChild(editNoteBtn);
+  btnContainer.appendChild(deleteNoteBtn);
+  li.appendChild(btnContainer);
+
+  li.id = id;
+  li.classList = "note__item";
+  notesList.appendChild(li);
 }
 
 /*
   ========================================================
+  Note action events - delegated from notes list
   ======================================================== 
   */
-// ON DELETE:
-// remove from the DOM
-// Fetch items from localStorage
-// delete from local storage set updated list of notes
+//
+function notesActions(e) {
+  e.preventDefault();
+
+  let notesStorage = getItemsFromStorage();
+  let noteContainer = e.target.parentElement.parentElement;
+  let notePara = noteContainer.firstChild;
+  if (e.target.textContent === "delete") {
+    //DOM
+    noteContainer.remove();
+    // FROM STORAGE
+    console.log(notePara.textContent);
+    const updatedNotes = notesStorage.filter(
+      (note) => note.text !== notePara.textContent
+    );
+
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+  }
+
+  // EDIT/UPDATE FUNCTIONALITY
+  if (e.target.textContent === "edit") {
+    console.log("edit");
+    let notePara = (noteContainer.firstChild.disabled = false);
+  }
+}

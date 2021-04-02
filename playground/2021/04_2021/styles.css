@@ -52,9 +52,16 @@ Header
 */
 
 header > h1 {
+  font-size: 9rem;
   padding: 0.5rem 0;
 }
 
+@media screen and (max-width: 500px) {
+  header > h1 {
+    font-size: 5rem;
+    padding: 0.5rem 0;
+  }
+}
 /*
 ============
 Main content
@@ -63,24 +70,26 @@ Main content
 
 .note__add__container {
   margin: 1rem 0;
-
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 .note__add__container > label {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  display: block;
   font-weight: 600;
-  margin-right: 0.5rem;
+  margin-bottom: 1rem;
 }
 .note__input {
   border: none;
   padding: 0;
   border-bottom: #dbdbdb solid 1px;
-  width: 50vw;
+  width: 80vw;
   margin-right: 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .note__input {
+    width: 60vw;
+  }
 }
 .note__input:focus {
   border: none;
@@ -108,23 +117,40 @@ Main content
 }
 
 .form__output > h2 {
+  font-size: 2rem;
   font-weight: 600;
 }
 .note__item {
   margin: 1rem 0;
   padding: 1rem 0;
-  /* display: flex; */
-  /* justify-content: space-between; */
+  font-size: 2rem;
   border-bottom: #c0c0c0 solid 1px;
 }
-.note__item > button {
+.note__item > input {
+  border: none;
+  padding: 0;
+  width: 80vw;
+
+  font-size: 2rem;
+}
+.note__item > input:disabled {
+  background: none;
+}
+.note__item > input:enabled {
+  border-left: #262626 solid 1px;
+  padding-left: 0.5rem;
+}
+
+.btnContainer > button {
+  margin-top: 1rem;
+  cursor: pointer;
   background: none;
   border: #c0c0c0 solid 1px;
   border-radius: 0.25rem;
   padding: 0.25rem;
-  display: block;
 }
 
-.deleteNoteBtn {
-  background-color: red;
+.btnContainer > .deleteNoteBtn {
+  /* background-color: rgba(241, 68, 24, 0.9); */
+  margin-left: 0.5rem;
 }
