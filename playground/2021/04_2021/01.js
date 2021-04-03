@@ -4,6 +4,9 @@
 // 2 - Create/Edit/Delete Functionality (DONE)
 // 3 - Complete/Non-Complete status with check button
 // 4 - Icon of a camper/wagooner
+// 5 - Modal for delete confirmation
+// 6 - Revert back to original string if updated blank by accident
+// 7 - Drag and drop list itemsf
 
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
@@ -40,33 +43,38 @@ function setNotesList() {
   let notes = notesStorage;
 
   notes.forEach((note) => {
-    addNoteToDOM(note);
+    const { text, id } = note;
+    addNoteToDOM(note.text, note.id);
   });
 }
 
 // 3) *** Add note to DOM
-function addNoteToDOM(note) {
+function addNoteToDOM(text, id) {
   const li = document.createElement("li");
   const form = document.createElement("form");
   const noteText = document.createElement("input");
-  noteText.value = note.text;
+  noteText.value = text;
   noteText.disabled = true;
   const btnContainer = document.createElement("div");
   btnContainer.classList = "btnContainer";
   const editNoteBtn = document.createElement("button");
   editNoteBtn.textContent = "edit";
   editNoteBtn.classList = "editBtn";
+  editNoteBtn.type = "submit";
   const deleteNoteBtn = document.createElement("button");
   deleteNoteBtn.classList = "deleteNoteBtn";
   deleteNoteBtn.textContent = "delete";
+  deleteNoteBtn.type = "button";
 
-  li.appendChild(noteText);
+  form.appendChild(noteText);
   btnContainer.appendChild(editNoteBtn);
   btnContainer.appendChild(deleteNoteBtn);
-  li.appendChild(btnContainer);
+  form.appendChild(btnContainer);
+  li.appendChild(form);
 
-  li.id = note.id;
-  li.classList = "note__item";
+  form.classList = "note__item";
+
+  li.id = id;
   notesList.appendChild(li);
 }
 
@@ -94,29 +102,31 @@ function createNote(e) {
   notesStorage.push(newNote);
   localStorage.setItem("notes", JSON.stringify(notesStorage));
 
+  addNoteToDOM(text, id);
+
   // append to list on the DOM
-  const li = document.createElement("li");
-  const form = document.createElement("form");
-  const noteText = document.createElement("input");
-  noteText.value = text;
-  noteText.disabled = true;
-  const btnContainer = document.createElement("div");
-  btnContainer.classList = "btnContainer";
-  const editNoteBtn = document.createElement("button");
-  editNoteBtn.textContent = "edit";
-  editNoteBtn.classList = "editBtn";
-  const deleteNoteBtn = document.createElement("button");
-  deleteNoteBtn.classList = "deleteNoteBtn";
-  deleteNoteBtn.textContent = "delete";
+  // const li = document.createElement("li");
+  // const form = document.createElement("form");
+  // const noteText = document.createElement("input");
+  // noteText.value = text;
+  // noteText.disabled = true;
+  // const btnContainer = document.createElement("div");
+  // btnContainer.classList = "btnContainer";
+  // const editNoteBtn = document.createElement("button");
+  // editNoteBtn.textContent = "edit";
+  // editNoteBtn.classList = "editBtn";
+  // const deleteNoteBtn = document.createElement("button");
+  // deleteNoteBtn.classList = "deleteNoteBtn";
+  // deleteNoteBtn.textContent = "delete";
 
-  li.appendChild(noteText);
-  btnContainer.appendChild(editNoteBtn);
-  btnContainer.appendChild(deleteNoteBtn);
-  li.appendChild(btnContainer);
+  // li.appendChild(noteText);
+  // btnContainer.appendChild(editNoteBtn);
+  // btnContainer.appendChild(deleteNoteBtn);
+  // li.appendChild(btnContainer);
 
-  li.id = id;
-  li.classList = "note__item";
-  notesList.appendChild(li);
+  // li.id = id;
+  // li.classList = "note__item";
+  // notesList.appendChild(li);
 }
 
 /*
@@ -129,8 +139,8 @@ function notesActions(e) {
   e.preventDefault();
 
   let notesStorage = getItemsFromStorage();
-  let noteContainer = e.target.parentElement.parentElement;
-  let notePara = noteContainer.firstChild;
+  let noteContainer = e.target.parentElement.parentElement.parentElement;
+  let notePara = noteContainer.firstChild.firstChild;
   if (e.target.textContent === "delete") {
     console.log("deleted");
     //DOM
@@ -146,25 +156,31 @@ function notesActions(e) {
 
   // EDIT/UPDATE FUNCTIONALITY
   if (e.target.textContent === "edit") {
-    noteContainer.firstChild.disabled = false;
-    noteContainer.firstChild.focus();
+    noteContainer.firstChild.firstChild.disabled = false;
+    noteContainer.firstChild.firstChild.focus();
     console.log(noteContainer.id);
     e.target.textContent = "update";
     return;
   }
   if (e.target.textContent === "update") {
-    noteContainer.firstChild.disabled = true;
+    const preText = noteContainer.firstChild.firstChild.value;
+    noteContainer.firstChild.firstChild.disabled = true;
     e.target.textContent = "edit";
-    let updatedNotes = notesStorage.map((note) => {
-      if (Number(note.id) === Number(noteContainer.id)) {
-        return {
-          id: Number(noteContainer.id),
-          text: noteContainer.firstChild.value,
-        };
-      }
-      return note;
-    });
-    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    console.log(noteContainer.id);
+
+    if (noteContainer.firstChild.firstChild.value === "") {
+    } else {
+      let updatedNotes = notesStorage.map((note) => {
+        if (Number(note.id) === Number(noteContainer.id)) {
+          return {
+            id: Number(noteContainer.id),
+            text: noteContainer.firstChild.firstChild.value,
+          };
+        }
+        return note;
+      });
+      localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    }
     return;
   }
 }
