@@ -1,7 +1,7 @@
 // NOTES_LIST WITH LOCAL STORAGE.
 
 // 1 - Dynamically Add Date Heading
-// 2 - Create/Edit/Delete Functionality
+// 2 - Create/Edit/Delete Functionality (DONE)
 // 3 - Complete/Non-Complete status with check button
 // 4 - Icon of a camper/wagooner
 
@@ -47,6 +47,7 @@ function setNotesList() {
 // 3) *** Add note to DOM
 function addNoteToDOM(note) {
   const li = document.createElement("li");
+  const form = document.createElement("form");
   const noteText = document.createElement("input");
   noteText.value = note.text;
   noteText.disabled = true;
@@ -95,6 +96,7 @@ function createNote(e) {
 
   // append to list on the DOM
   const li = document.createElement("li");
+  const form = document.createElement("form");
   const noteText = document.createElement("input");
   noteText.value = text;
   noteText.disabled = true;
@@ -145,6 +147,7 @@ function notesActions(e) {
   // EDIT/UPDATE FUNCTIONALITY
   if (e.target.textContent === "edit") {
     noteContainer.firstChild.disabled = false;
+    noteContainer.firstChild.focus();
     console.log(noteContainer.id);
     e.target.textContent = "update";
     return;
