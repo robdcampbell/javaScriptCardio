@@ -11,6 +11,14 @@
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
 const notesList = document.querySelector(".notes__output");
+const dateToday = document.querySelector(".dateToday");
+
+let date = new Date();
+let today = date.getDay();
+let month = date.getMonth();
+let year = date.getFullYear();
+
+dateToday.textContent = `${month}/${today}/${year}`;
 
 // Event Listeners:
 addBtn.addEventListener("click", createNote);
