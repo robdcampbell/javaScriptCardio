@@ -1,12 +1,12 @@
 // NOTES_LIST WITH LOCAL STORAGE.
 
-// 1 - Dynamically Add Date Heading
-// 2 - Create/Edit/Delete Functionality (DONE)
+// 1 - Dynamically Add Date Heading --- (DONE)
+// 2 - Create/Edit/Delete Functionality --- (DONE)
 // 3 - Complete/Non-Complete status with check button
 // 4 - Icon of a camper/wagooner
 // 5 - Modal for delete confirmation
-// 6 - Revert back to original string if updated blank by accident
-// 7 - Drag and drop list itemsf
+// 6 - Revert back to original string if updated blank by accident --- (DONE)
+// 7 - Drag and drop list items to re-order (and persist)
 
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
@@ -111,30 +111,6 @@ function createNote(e) {
   localStorage.setItem("notes", JSON.stringify(notesStorage));
 
   addNoteToDOM(text, id);
-
-  // append to list on the DOM
-  // const li = document.createElement("li");
-  // const form = document.createElement("form");
-  // const noteText = document.createElement("input");
-  // noteText.value = text;
-  // noteText.disabled = true;
-  // const btnContainer = document.createElement("div");
-  // btnContainer.classList = "btnContainer";
-  // const editNoteBtn = document.createElement("button");
-  // editNoteBtn.textContent = "edit";
-  // editNoteBtn.classList = "editBtn";
-  // const deleteNoteBtn = document.createElement("button");
-  // deleteNoteBtn.classList = "deleteNoteBtn";
-  // deleteNoteBtn.textContent = "delete";
-
-  // li.appendChild(noteText);
-  // btnContainer.appendChild(editNoteBtn);
-  // btnContainer.appendChild(deleteNoteBtn);
-  // li.appendChild(btnContainer);
-
-  // li.id = id;
-  // li.classList = "note__item";
-  // notesList.appendChild(li);
 }
 
 /*
@@ -148,21 +124,18 @@ function notesActions(e) {
 
   let notesStorage = getItemsFromStorage();
   let noteContainer = e.target.parentElement.parentElement.parentElement;
-  let notePara = noteContainer.firstChild.firstChild;
-  if (e.target.textContent === "delete") {
-    console.log("deleted");
-    //DOM
-    noteContainer.remove();
-    // FROM STORAGE
-    console.log(notePara);
-    const updatedNotes = notesStorage.filter(
-      (note) => note.text !== notePara.value
-    );
 
+  if (e.target.textContent === "delete") {
+    console.log(noteContainer.id);
+    const updatedNotes = notesStorage.filter(
+      (note) => Number(note.id) !== Number(noteContainer.id)
+    );
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    noteContainer.remove();
   }
 
   // EDIT/UPDATE FUNCTIONALITY
+
   if (e.target.textContent === "edit") {
     noteContainer.firstChild.firstChild.disabled = false;
     noteContainer.firstChild.firstChild.focus();
@@ -171,12 +144,14 @@ function notesActions(e) {
     return;
   }
   if (e.target.textContent === "update") {
-    const preText = noteContainer.firstChild.firstChild.value;
     noteContainer.firstChild.firstChild.disabled = true;
     e.target.textContent = "edit";
-    console.log(noteContainer.id);
-
     if (noteContainer.firstChild.firstChild.value === "") {
+      let preText = notesStorage.filter(
+        (note) => Number(note.id) === Number(noteContainer.id)
+      );
+      console.log(preText);
+      noteContainer.firstChild.firstChild.value = preText[0].text;
     } else {
       let updatedNotes = notesStorage.map((note) => {
         if (Number(note.id) === Number(noteContainer.id)) {

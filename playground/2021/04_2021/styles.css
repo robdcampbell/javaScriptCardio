@@ -81,6 +81,7 @@ Main content
   margin-bottom: 1rem;
 }
 .note__input {
+  cursor: cell;
   border: none;
   padding: 0;
   border-bottom: #dbdbdb solid 1px;
