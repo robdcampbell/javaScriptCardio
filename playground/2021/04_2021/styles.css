@@ -131,11 +131,10 @@ Main content
   border-bottom: #c0c0c0 solid 1px;
 }
 .note__item > input {
-  color: #9c9c9c;
+  color: #353535;
   border: none;
   padding: 0;
   width: 80vw;
-
   font-size: 2rem;
 }
 .note__item > input:disabled {
@@ -156,10 +155,18 @@ Main content
   background: none;
   border: #c0c0c0 solid 1px;
   border-radius: 0.25rem;
-  padding: 0.25rem;
+  padding: 0.25rem 1rem;
 }
 
+.btnContainer > .progress {
+  margin-right: 0.5rem;
+}
 .btnContainer > .deleteNoteBtn {
   /* background-color: rgba(241, 68, 24, 0.9); */
-  margin-left: 0.5rem;
+  margin-left: 5rem;
+}
+
+.completed {
+  /* text-decoration: line-through;
+  color: #9c9c9c !important; */
 }

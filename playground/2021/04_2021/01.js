@@ -2,7 +2,7 @@
 
 // 1 - Dynamically Add Date Heading --- (DONE)
 // 2 - Create/Edit/Delete Functionality --- (DONE)
-// 3 - Complete/Non-Complete status with check button
+// 3 - Complete/Non-Complete status with check button, line-through
 // 4 - Icon of a camper/wagooner
 // 5 - Modal for delete confirmation
 // 6 - Revert back to original string if updated blank by accident --- (DONE)
@@ -14,11 +14,11 @@ const notesList = document.querySelector(".notes__output");
 const dateToday = document.querySelector(".dateToday");
 
 let date = new Date();
-let today = date.getDay();
+let today = date.getDate();
 let month = date.getMonth();
 let year = date.getFullYear();
 
-dateToday.textContent = `${month}/${today}/${year}`;
+dateToday.textContent = `${month + 1}/${today}/${year}`;
 
 // Event Listeners:
 addBtn.addEventListener("click", createNote);
@@ -57,14 +57,24 @@ function setNotesList() {
 }
 
 // 3) *** Add note to DOM
-function addNoteToDOM(text, id) {
+function addNoteToDOM(text, id, inProgress) {
   const li = document.createElement("li");
   const form = document.createElement("form");
   const noteText = document.createElement("input");
   noteText.value = text;
   noteText.disabled = true;
+  // temporary
+  noteText.classList = "completed";
+
   const btnContainer = document.createElement("div");
   btnContainer.classList = "btnContainer";
+  const progressBtn = document.createElement("button");
+  progressBtn.classList = "progress";
+  progressBtn.textContent = "completed";
+  if (inProgress === false) {
+    progressBtn.classList = "progress completed";
+  }
+  progressBtn.type = "button";
   const editNoteBtn = document.createElement("button");
   editNoteBtn.textContent = "edit";
   editNoteBtn.classList = "editBtn";
@@ -75,6 +85,7 @@ function addNoteToDOM(text, id) {
   deleteNoteBtn.type = "button";
 
   form.appendChild(noteText);
+  btnContainer.appendChild(progressBtn);
   btnContainer.appendChild(editNoteBtn);
   btnContainer.appendChild(deleteNoteBtn);
   form.appendChild(btnContainer);
@@ -139,7 +150,7 @@ function notesActions(e) {
   if (e.target.textContent === "edit") {
     noteContainer.firstChild.firstChild.disabled = false;
     noteContainer.firstChild.firstChild.focus();
-    console.log(noteContainer.id);
+
     e.target.textContent = "update";
     return;
   }
@@ -150,7 +161,6 @@ function notesActions(e) {
       let preText = notesStorage.filter(
         (note) => Number(note.id) === Number(noteContainer.id)
       );
-      console.log(preText);
       noteContainer.firstChild.firstChild.value = preText[0].text;
     } else {
       let updatedNotes = notesStorage.map((note) => {
