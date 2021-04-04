@@ -7,6 +7,7 @@
 // 5 - Modal for delete confirmation
 // 6 - Revert back to original string if updated blank by accident --- (DONE)
 // 7 - Drag and drop list items to re-order (and persist)
+// 8 - Prepend the last added item, persist order if drag-and-dropped
 
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
@@ -57,7 +58,7 @@ function setNotesList() {
 }
 
 // 3) *** Add note to DOM
-function addNoteToDOM(text, id, inProgress) {
+function addNoteToDOM(text, id, completed) {
   const li = document.createElement("li");
   const form = document.createElement("form");
   const noteText = document.createElement("input");
@@ -71,7 +72,7 @@ function addNoteToDOM(text, id, inProgress) {
   const progressBtn = document.createElement("button");
   progressBtn.classList = "progress";
   progressBtn.textContent = "completed";
-  if (inProgress === false) {
+  if (completed === true) {
     progressBtn.classList = "progress completed";
   }
   progressBtn.type = "button";
@@ -113,15 +114,17 @@ function createNote(e) {
 
   let id = Date.now();
   let text = noteInput.value;
+  let completed = false;
 
-  const newNote = { id, text };
+  const newNote = { id, text, completed };
 
   noteInput.value = "";
   let notesStorage = getItemsFromStorage();
   notesStorage.push(newNote);
   localStorage.setItem("notes", JSON.stringify(notesStorage));
 
-  addNoteToDOM(text, id);
+  // ADD STATUS ARGUMENT!
+  addNoteToDOM(text, id, false);
 }
 
 /*
