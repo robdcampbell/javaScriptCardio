@@ -28,7 +28,6 @@ notesList.addEventListener("click", notesActions);
 document.onload = (function () {
   getItemsFromStorage();
   setNotesList();
-  console.log(getItemsFromStorage());
 })();
 
 // 1)  ***  Get items from local storage
@@ -76,7 +75,7 @@ function addNoteToDOM(text, id, completed) {
   progressBtn.textContent = "completed";
   if (completed) {
     progressBtn.textContent = "still working on it";
-    progressBtn.classList = "progress completed";
+    progressBtn.classList = "progress";
     noteText.classList = "completed";
   }
   progressBtn.type = "button";
@@ -154,16 +153,37 @@ function notesActions(e) {
 
   // EDIT/UPDATE FUNCTIONALITY
   if (e.target.textContent === "completed") {
-    // noteContainer.firstChild.firstChild.disabled = false;
-    // noteContainer.firstChild.firstChild.focus();
-    console.log("task done");
     e.target.textContent = "still working on it";
     noteContainer.firstChild.firstChild.classList = "completed";
+    //persist to local storage
+    let updatedNotes = notesStorage.map((note) => {
+      if (Number(note.id) === Number(noteContainer.id)) {
+        return {
+          ...note,
+          completed: true,
+        };
+      }
+      return note;
+    });
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    // LS
     return;
   }
   if (e.target.textContent === "still working on it") {
     e.target.textContent = "completed";
     noteContainer.firstChild.firstChild.classList = "";
+    //persist to local storage
+    let updatedNotes = notesStorage.map((note) => {
+      if (Number(note.id) === Number(noteContainer.id)) {
+        return {
+          ...note,
+          completed: false,
+        };
+      }
+      return note;
+    });
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    // LS
     return;
   }
   // Complete / Incomplete FUNCTIONALITY
