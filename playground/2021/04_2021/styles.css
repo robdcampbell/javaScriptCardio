@@ -80,6 +80,8 @@ Main content
   font-weight: 600;
   margin-bottom: 1rem;
 }
+.addConfirmation {
+}
 .note__input {
   cursor: cell;
   border: none;
@@ -166,7 +168,17 @@ Main content
   margin-left: 5rem;
 }
 
+/*
+========================
+Toggle Classes
+========================
+*/
+
 .completed {
   text-decoration: line-through;
   color: #9c9c9c !important;
+}
+
+.hidden {
+  display: none;
 }

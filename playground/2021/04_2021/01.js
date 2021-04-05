@@ -10,11 +10,15 @@
 // 8 - Prepend the last added item, persist order if drag-and-dropped.
 // 9 - Responsive centering/windows are larger media queries.
 // 10 - Refactor completed project using ES6 Modules.
+
+// FULLSTACK (MERN, PERN, React + Firebase)
 // 11 - Translate for React: Agenda Project
+
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
 const notesList = document.querySelector(".notes__output");
 const dateToday = document.querySelector(".dateToday");
+const addConfirmation = document.getElementById("addConfirmation");
 
 let date = new Date();
 let today = date.getDate();
@@ -108,9 +112,21 @@ function addNoteToDOM(text, id, completed) {
   ======================================================== 
 */
 
+// Action Confirmations
+function actionAlert(message) {
+  addConfirmation.textContent = `${message}`;
+  addConfirmation.classList = "";
+  setTimeout(() => {
+    addConfirmation.textContent = "";
+    console.log("action!");
+  }, 2000);
+}
+
 // ON ADD:
 function createNote(e) {
   e.preventDefault();
+
+  actionAlert("*Note Added");
 
   if (!noteInput.value) {
     alert("You need to enter something!");
@@ -145,7 +161,8 @@ function notesActions(e) {
   let noteContainer = e.target.parentElement.parentElement.parentElement;
 
   if (e.target.textContent === "delete") {
-    console.log(noteContainer.id);
+    actionAlert("*Note Deleted");
+
     const updatedNotes = notesStorage.filter(
       (note) => Number(note.id) !== Number(noteContainer.id)
     );
