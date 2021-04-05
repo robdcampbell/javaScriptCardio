@@ -9,6 +9,7 @@
 // 7 - Drag and drop list items to re-order (and persist).
 // 8 - Prepend the last added item, persist order if drag-and-dropped.
 // 9 - Responsive centering/windows are larger media queries.
+//   - refactor media queries, etc... to be mobile first.
 // 10 - Refactor completed project using ES6 Modules.
 
 // FULLSTACK (MERN, PERN, React + Firebase)
@@ -41,7 +42,6 @@ function getItemsFromStorage() {
   let notesStorage = localStorage.getItem("notes");
   if (!notesStorage) {
     notesStorage = [];
-    console.log(notesStorage.length);
     return notesStorage;
   }
   return JSON.parse(notesStorage);
@@ -66,16 +66,16 @@ function setNotesList() {
 // 3) *** Add note to DOM
 function addNoteToDOM(text, id, completed) {
   const li = document.createElement("li");
+  li.id = id;
   const form = document.createElement("form");
   const noteText = document.createElement("input");
+
   noteText.value = text;
   noteText.disabled = true;
-  //
-  // temporary
-  // noteText.classList = "completed";
 
   const btnContainer = document.createElement("div");
   btnContainer.classList = "btnContainer";
+
   const progressBtn = document.createElement("button");
   progressBtn.classList = "progress";
   progressBtn.textContent = "completed";
@@ -85,10 +85,12 @@ function addNoteToDOM(text, id, completed) {
     noteText.classList = "completed";
   }
   progressBtn.type = "button";
+
   const editNoteBtn = document.createElement("button");
   editNoteBtn.textContent = "edit";
   editNoteBtn.classList = "editBtn";
   editNoteBtn.type = "submit";
+
   const deleteNoteBtn = document.createElement("button");
   deleteNoteBtn.classList = "deleteNoteBtn";
   deleteNoteBtn.textContent = "delete";
@@ -103,7 +105,6 @@ function addNoteToDOM(text, id, completed) {
 
   form.classList = "note__item";
 
-  li.id = id;
   notesList.appendChild(li);
 }
 
