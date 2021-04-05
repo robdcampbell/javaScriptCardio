@@ -2,13 +2,15 @@
 
 // 1 - Dynamically Add Date Heading --- (DONE)
 // 2 - Create/Edit/Delete Functionality --- (DONE)
-// 3 - Complete/Non-Complete status with check button, line-through
+// 3 - Complete/Non-Complete status with check button, line-through --- (DONE)
 // 4 - Icon of a camper/wagooner
 // 5 - Modal for delete confirmation
 // 6 - Revert back to original string if updated blank by accident --- (DONE)
-// 7 - Drag and drop list items to re-order (and persist)
-// 8 - Prepend the last added item, persist order if drag-and-dropped
-
+// 7 - Drag and drop list items to re-order (and persist).
+// 8 - Prepend the last added item, persist order if drag-and-dropped.
+// 9 - Responsive centering/windows are larger media queries.
+// 10 - Refactor completed project using ES6 Modules.
+// 11 - Translate for React: Agenda Project
 const addBtn = document.querySelector(".add__btn");
 const noteInput = document.querySelector(".note__input");
 const notesList = document.querySelector(".notes__output");
