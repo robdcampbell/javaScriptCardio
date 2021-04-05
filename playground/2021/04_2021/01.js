@@ -28,6 +28,7 @@ notesList.addEventListener("click", notesActions);
 document.onload = (function () {
   getItemsFromStorage();
   setNotesList();
+  console.log(getItemsFromStorage());
 })();
 
 // 1)  ***  Get items from local storage
@@ -52,8 +53,8 @@ function setNotesList() {
   let notes = notesStorage;
 
   notes.forEach((note) => {
-    const { text, id } = note;
-    addNoteToDOM(note.text, note.id);
+    const { text, id, completed } = note;
+    addNoteToDOM(text, id, completed);
   });
 }
 
@@ -64,16 +65,18 @@ function addNoteToDOM(text, id, completed) {
   const noteText = document.createElement("input");
   noteText.value = text;
   noteText.disabled = true;
+  //
   // temporary
-  noteText.classList = "completed";
+  // noteText.classList = "completed";
 
   const btnContainer = document.createElement("div");
   btnContainer.classList = "btnContainer";
   const progressBtn = document.createElement("button");
   progressBtn.classList = "progress";
   progressBtn.textContent = "completed";
-  if (completed === true) {
+  if (completed) {
     progressBtn.classList = "progress completed";
+    noteText.classList = "completed";
   }
   progressBtn.type = "button";
   const editNoteBtn = document.createElement("button");
@@ -124,7 +127,7 @@ function createNote(e) {
   localStorage.setItem("notes", JSON.stringify(notesStorage));
 
   // ADD STATUS ARGUMENT!
-  addNoteToDOM(text, id, false);
+  addNoteToDOM(text, id, completed);
 }
 
 /*

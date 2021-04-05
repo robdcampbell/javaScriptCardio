@@ -167,6 +167,6 @@ Main content
 }
 
 .completed {
-  /* text-decoration: line-through;
-  color: #9c9c9c !important; */
+  text-decoration: line-through;
+  color: #9c9c9c !important;
 }
