@@ -75,6 +75,7 @@ function addNoteToDOM(text, id, completed) {
   progressBtn.classList = "progress";
   progressBtn.textContent = "completed";
   if (completed) {
+    progressBtn.textContent = "still working on it";
     progressBtn.classList = "progress completed";
     noteText.classList = "completed";
   }
@@ -152,6 +153,20 @@ function notesActions(e) {
   }
 
   // EDIT/UPDATE FUNCTIONALITY
+  if (e.target.textContent === "completed") {
+    // noteContainer.firstChild.firstChild.disabled = false;
+    // noteContainer.firstChild.firstChild.focus();
+    console.log("task done");
+    e.target.textContent = "still working on it";
+    noteContainer.firstChild.firstChild.classList = "completed";
+    return;
+  }
+  if (e.target.textContent === "still working on it") {
+    e.target.textContent = "completed";
+    noteContainer.firstChild.firstChild.classList = "";
+    return;
+  }
+  // Complete / Incomplete FUNCTIONALITY
 
   if (e.target.textContent === "edit") {
     noteContainer.firstChild.firstChild.disabled = false;
@@ -160,6 +175,7 @@ function notesActions(e) {
     e.target.textContent = "update";
     return;
   }
+
   if (e.target.textContent === "update") {
     noteContainer.firstChild.firstChild.disabled = true;
     e.target.textContent = "edit";
