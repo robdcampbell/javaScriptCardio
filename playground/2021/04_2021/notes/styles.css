@@ -17,16 +17,26 @@ notes from sketching
   box-sizing: border-box;
 }
 
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  /* color: #262626; */
+}
+
 body {
   font-family: Helvetica, Arial, sans-serif;
-  color: #353535;
+  /* color: #262626; */
+  /* background-color: #353535; */
 }
 
 header {
   width: 100%;
   display: flex;
-  /* justify-content: center; */
-  /* padding: 2rem 0; */
   border-bottom: #d6d6d6 solid 1px;
 }
 
@@ -80,8 +90,7 @@ Main content
   font-weight: 600;
   margin-bottom: 1rem;
 }
-.addConfirmation {
-}
+
 .note__input {
   cursor: cell;
   border: none;
@@ -127,14 +136,17 @@ Main content
   font-weight: 600;
 }
 .note__item {
-  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
   padding: 1rem 0;
   font-size: 2rem;
   border-bottom: #c0c0c0 solid 1px;
 }
 .note__item > input {
-  color: #353535;
   border: none;
+  flex-wrap: wrap;
   padding: 0;
   width: 80vw;
   font-size: 2rem;
@@ -143,16 +155,17 @@ Main content
   background: none;
 }
 .note__item > input:enabled {
-  color: #353535;
+  color: #f54b20;
 }
 .note__item > input:focus {
-  /* background-color: red; */
   outline: #353535;
 }
 
+.btnContainer {
+  margin-top: 2rem;
+}
+
 .btnContainer > button {
-  margin-top: 1rem;
-  color: #353535;
   cursor: pointer;
   background: none;
   border: #c0c0c0 solid 1px;
@@ -161,11 +174,27 @@ Main content
 }
 
 .btnContainer > .progress {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 .btnContainer > .deleteNoteBtn {
-  /* background-color: rgba(241, 68, 24, 0.9); */
-  margin-left: 5rem;
+  background-color: #f54b20;
+  color: #f4f4f4;
+  margin-left: 1rem;
+}
+@media screen and (max-width: 600px) {
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btnContainer > * {
+    margin-top: 0.25rem;
+    padding: 0;
+  }
+  .btnContainer > .deleteNoteBtn {
+    margin: 0;
+    margin-top: 0.25rem;
+  }
 }
 
 /*

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Daily Notes</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Notes. <span class="dateToday">04/2021</span></h1>
+      </header>
+
+      <main>
+        <form class="note__add__container">
+          <label for=""
+            >What's next:
+            <span id="addConfirmation" class="addConfirmation"></span>
+          </label>
+          <input type="text" class="note__input" />
+          <button class="add__btn">+</button>
+        </form>
+
+        <div class="form__output">
+          <ul class="notes__output"></ul>
+        </div>
+      </main>
+    </div>
+    <script src="01.js"></script>
+  </body>
+</html>

@@ -11,6 +11,10 @@
 // 9 - Responsive centering/windows are larger media queries.
 //   - refactor media queries, etc... to be mobile first.
 // 10 - Refactor completed project using ES6 Modules.
+// 11 - Light/Dark mode
+// 12 - Host on netlify
+
+//*** BUG FIX INPUT OVERFLOW, transition to Paragraphs and introduce edit modals? dynamic textareas that replace the orginal text?  !!!
 
 // FULLSTACK (MERN, PERN, React + Firebase)
 // 11 - Translate for React: Agenda Project
@@ -35,6 +39,7 @@ notesList.addEventListener("click", notesActions);
 document.onload = (function () {
   getItemsFromStorage();
   setNotesList();
+  noteInput.focus();
 })();
 
 // 1)  ***  Get items from local storage
@@ -47,16 +52,14 @@ function getItemsFromStorage() {
   return JSON.parse(notesStorage);
 }
 
-// 2)  *** Set current DOM notes from local storage
+// 2)  *** RENDER LocalStorage Notes to the DOM
 function setNotesList() {
   let notesStorage = getItemsFromStorage();
   if (notesStorage.length === 0) {
     console.log("NONE");
     return;
   }
-
   let notes = notesStorage;
-
   notes.forEach((note) => {
     const { text, id, completed } = note;
     addNoteToDOM(text, id, completed);
@@ -68,9 +71,11 @@ function addNoteToDOM(text, id, completed) {
   const li = document.createElement("li");
   li.id = id;
   const form = document.createElement("form");
-  const noteText = document.createElement("input");
+  form.classList = "note__item";
+  //TEMP input -> p
+  const noteText = document.createElement("p");
 
-  noteText.value = text;
+  noteText.textContent = text;
   noteText.disabled = true;
 
   const btnContainer = document.createElement("div");
@@ -103,30 +108,24 @@ function addNoteToDOM(text, id, completed) {
   form.appendChild(btnContainer);
   li.appendChild(form);
 
-  form.classList = "note__item";
-
   notesList.appendChild(li);
 }
-
-/*
-  ========================================================
-  ======================================================== 
-*/
 
 // Action Confirmations
 function actionAlert(message) {
   addConfirmation.textContent = `${message}`;
-  addConfirmation.classList = "";
   setTimeout(() => {
     addConfirmation.textContent = "";
-    console.log("action!");
   }, 2000);
 }
 
-// ON ADD:
+/*
+  ========================================================
+  Create note
+  ======================================================== 
+*/
 function createNote(e) {
   e.preventDefault();
-
   actionAlert("*Note Added");
 
   if (!noteInput.value) {
@@ -141,11 +140,11 @@ function createNote(e) {
   const newNote = { id, text, completed };
 
   noteInput.value = "";
+
   let notesStorage = getItemsFromStorage();
   notesStorage.push(newNote);
   localStorage.setItem("notes", JSON.stringify(notesStorage));
 
-  // ADD STATUS ARGUMENT!
   addNoteToDOM(text, id, completed);
 }
 
@@ -171,11 +170,10 @@ function notesActions(e) {
     noteContainer.remove();
   }
 
-  // EDIT/UPDATE FUNCTIONALITY
+  // COMPLETED
   if (e.target.textContent === "completed") {
     e.target.textContent = "still working on it";
     noteContainer.firstChild.firstChild.classList = "completed";
-    //persist to local storage
     let updatedNotes = notesStorage.map((note) => {
       if (Number(note.id) === Number(noteContainer.id)) {
         return {
@@ -186,13 +184,12 @@ function notesActions(e) {
       return note;
     });
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
-    // LS
     return;
   }
+  // SET BACK TO IN-PROGRESS
   if (e.target.textContent === "still working on it") {
     e.target.textContent = "completed";
     noteContainer.firstChild.firstChild.classList = "";
-    //persist to local storage
     let updatedNotes = notesStorage.map((note) => {
       if (Number(note.id) === Number(noteContainer.id)) {
         return {
@@ -203,19 +200,17 @@ function notesActions(e) {
       return note;
     });
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
-    // LS
     return;
   }
-  // Complete / Incomplete FUNCTIONALITY
 
+  // EDIT NOTE
   if (e.target.textContent === "edit") {
     noteContainer.firstChild.firstChild.disabled = false;
     noteContainer.firstChild.firstChild.focus();
-
     e.target.textContent = "update";
     return;
   }
-
+  // EDIT NOTE - UPDATE
   if (e.target.textContent === "update") {
     noteContainer.firstChild.firstChild.disabled = true;
     e.target.textContent = "edit";
