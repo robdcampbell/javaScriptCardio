@@ -141,6 +141,10 @@ class User {
 // extend User class for Admin User
 
 class Admin extends User {
+  constructor(name, age, email, admin) {
+    super(name, age, email);
+    this.admin = admin;
+  }
   deleteUser(user) {
     users = users.filter((u) => u.email !== user.email);
   }
@@ -148,7 +152,7 @@ class Admin extends User {
 
 const userOne = new User("Mario", 55, "mario@gmail.com");
 const userTwo = new User("Luigi", 55, "luigi@gmail.com");
-const adminUser = new Admin("Rob", 32, "rob@gmail.com");
+const adminUser = new Admin("Rob", 32, "rob@gmail.com", true);
 
 let users = [userOne, userTwo];
 //console.log(users);
