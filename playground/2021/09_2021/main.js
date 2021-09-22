@@ -15,6 +15,10 @@ document.onLoad = showListItems();
 // 3) If there are items, set "localStorageItems" to the parsed array of items
 // 4) populate the list with items from "localStorageItems"
 
+function showListItems() {
+  console.log("List Items Test");
+}
+
 function getItemsFromStorage() {
   console.log("testsssss");
 }
