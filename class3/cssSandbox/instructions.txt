@@ -1,0 +1,11 @@
+
+# See the comments to follow instructions
+
+# 1) Location to external style sheet
+  - Uncomment later! after inline body css
+
+# 2) Inline CSS: 
+  - insert style attribute as follows:
+    < body style="background-color: lightblue" >
+
+# 3) 
