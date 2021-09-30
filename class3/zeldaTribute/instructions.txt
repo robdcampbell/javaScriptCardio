@@ -1,7 +1,0 @@
-
-# - Link to external style stylesheet
-# - Edit page title
-# - Add ID to Nav Element, so we can link back to it from another part of the page. 
-# - Add external link path to Nintendo
-# - Make the jumbotron image a link to the official Zelda Website
-# - 
