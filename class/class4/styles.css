@@ -1,0 +1,107 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #272727;
+}
+
+/* NAV ICONS */
+.apple-nav-logo {
+  width: 20px;
+  /* background-color: red; */
+  padding: 1px;
+}
+.apple-logo-dark {
+  width: 24px;
+  padding: 0;
+}
+
+.nav-icon {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #c4c4c4;
+}
+
+.shopping-bag-icon {
+  height: 20px;
+}
+
+nav {
+  background-color: #272727;
+  padding: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-item {
+  text-decoration: none;
+  color: #c4c4c4;
+}
+.menu-icon {
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.announcement-section {
+  margin: 2rem;
+}
+
+.announcement-section h1 {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.announcement-section p {
+  text-align: center;
+}
+
+.media-section {
+  /* background-color: red; */
+  width: 100%;
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+.keynote-image {
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+.event-section {
+  color: #8a8a8a;
+  font-size: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 3rem;
+}
+
+.event-info-section p {
+  margin: 0 auto;
+  /* background-color: red; */
+}
+
+.footer-wrapper {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.footer-list {
+  /* border-top: #c4c4c4 solid 1px; */
+}
+
+.footer-list li {
+  border-top: #c4c4c4 solid 1px;
+  padding: 1rem 0;
+  font-size: 12px;
+}
