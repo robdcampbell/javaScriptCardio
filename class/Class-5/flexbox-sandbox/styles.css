@@ -1,0 +1,38 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #292929;
+  background-color: rgb(255, 243, 205);
+}
+.wrapper {
+  margin: 1rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+.container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  border-top: #292929 solid 1px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.box {
+  width: 50px;
+  height: 80px;
+  /* background-color: red; */
+  border: #292929 solid 1px;
+  border-radius: 0.5rem;
+  background-color: rgba(128, 0, 128, 0.7);
+}
