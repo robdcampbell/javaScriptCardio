@@ -1,0 +1,44 @@
+/* Reset */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: #272727;
+}
+
+body {
+  background-color: aliceblue;
+  font-family: monospace;
+}
+
+.wrapper {
+  padding: 1rem;
+}
+
+nav {
+  position: fixed;
+}
+
+section:first-of-type {
+  border-top: none;
+  margin-top: 3rem;
+}
+
+.product-container {
+  border-top: #292929 solid 1px;
+  min-height: 400px;
+}
+
+.info-container {
+  border-top: #292929 solid 1px;
+  min-height: 200px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
