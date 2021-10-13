@@ -1,4 +1,4 @@
-//console.log("Pterodactyls");
+// console.log("Pterodactyls");
 
 //
 //////////////////////////////////////////////////////
@@ -55,10 +55,28 @@ const revStr = (str) => {
   return str.split("").reverse().join("");
 };
 
-console.log(revStr("Pterodactyl"));
+// console.log(revStr("Pterodactyl"));
 
 //
 //////////////////////////////////////////////////////
 // 4)
 //////////////////////////////////////////////////////
 //
+
+/*
+detectWord("UcUNFYGaFYFYGtNUH") ➞ "cat"
+
+detectWord("bEEFGBuFBRrHgUHlNFYaYr") ➞ "burglar"
+
+detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment") ➞ "embezzlement"
+*/
+
+const lowerCase = "a";
+const upperCase = "A";
+
+// console.log(lowerCase.charCodeAt(0));
+// console.log(upperCase.charCodeAt(0));
+
+function detectWord(str) {
+  return [...str].filter((val) => val.charCodeAt(0) > 96).join("");
+}
