@@ -59,7 +59,7 @@ const revStr = (str) => {
 
 //
 //////////////////////////////////////////////////////
-// 4)
+// 4) DETECT LOWERCASE
 //////////////////////////////////////////////////////
 //
 
@@ -80,3 +80,16 @@ const upperCase = "A";
 function detectWord(str) {
   return [...str].filter((val) => val.charCodeAt(0) > 96).join("");
 }
+
+//
+//////////////////////////////////////////////////////
+// 5) Adding a property to an object
+//////////////////////////////////////////////////////
+//
+function addName(obj, name, value) {
+  obj[name] = value;
+  return obj;
+}
+
+// console.log(addName({}, "dogs", 4));
+// console.log(addName({ "lead-actor": "Batman" }, "villan", "Joker"));
