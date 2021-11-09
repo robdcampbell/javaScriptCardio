@@ -1,0 +1,16 @@
+
+***: https://www.youtube.com/watch?v=wWWNrANNO1k&t=1098s
+
+***: https://www.youtube.com/watch?v=KcdBOoK3Pfw
+
+***: image gallery - https://www.youtube.com/watch?v=afoxd5b0bJo
+
+
+* Works best if images are all the same size
+
+1) div = class="carousel-container"
+2) div = class="carousel-slider"
+3) img's = all images for slider
+4) below carousel-container
+    - 2 buttons, "prev" and "next"
+5)
