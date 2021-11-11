@@ -32,7 +32,7 @@ for (let i = 0; i <= str.length - 1; i++) {
 let counter = 0;
 
 while (counter < 10) {
-  console.log(counter);
+  // console.log(counter);
   counter++;
 }
 
@@ -54,23 +54,23 @@ let num = 10;
 
 // If statement
 if (num > 100) {
-  console.log("Number is large");
+  // console.log("Number is large");
 }
 
 // if else statement
 if (num > 5) {
-  console.log("Number is greater than 5");
+  // console.log("Number is greater than 5");
 } else {
-  console.log("Number is less than 5");
+  // console.log("Number is less than 5");
 }
 
 // else if statement
 if (num > 10) {
-  console.log("Number is more than 10");
+  // console.log("Number is more than 10");
 } else if (num > 5) {
-  console.log("Number is greater than than 5, but less than 10");
+  // console.log("Number is greater than than 5, but less than 10");
 } else {
-  console.log("Number is less than 5");
+  // console.log("Number is less than 5");
 }
 
 let val;
@@ -99,26 +99,65 @@ val > 0 && val > 10; // FALSE
 
 // invoke the function
 
-// Function examples
-/*
-  1) Simple addition
-    function addNumbers(a, b) {
-      return a + b;
+//
+// FUNCTION EXAMPLES
+//
+
+//  1) Fuction: Add 2 values
+
+const num1 = 5;
+const num2 = 10;
+
+function addNumbers(a, b) {
+  return a + b;
+}
+
+// addNumbers(num1, num2);
+// addNumbers(10, 20);
+
+// 2) Log a user from an array
+
+const userArr = ["Melissa", "Doug", "Ed", "Mary"];
+
+function logNames(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    console.log(arr[i]);
+  }
+}
+
+// logNames(userArr);
+
+// 3) Return an array of adult ages
+const ages = [9, 65, 18, 22, 13, 32];
+
+function isAdult(arr) {
+  let adults = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] >= 18) {
+      adults.push(arr[i]);
     }
-  
-  2) Sort A list of numbers
+  }
+  return adults;
+}
 
-  3) Conver Farenheit to celcius
-    // (0°C * 9/5) + 32 
+// console.log(isAdult(ages));
 
-    function convertToFarenheit(deg){
+// 4) Return array of odd numbers
 
-    }
+function oddNumbers(arr) {
+  return arr;
+}
 
-*/
+console.log(oddNumbers([6, 7, 9, 3, 4, 55, 2, 42]));
+
+// 5) Convert Farenheit to celcius
+// (0°C * 9/5) + 32
+
+// function convertToFarenheit(deg) {}
+
 function convertToFarenheit(deg) {
   return (deg * 9) / 5 + 32;
 }
 
-console.log(convertToFarenheit(5));
-console.log(convertToFarenheit(30));
+// console.log(convertToFarenheit(5));
+// console.log(convertToFarenheit(30));
