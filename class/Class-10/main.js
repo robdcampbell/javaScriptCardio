@@ -115,6 +115,7 @@ function addNumbers(a, b) {
 // addNumbers(num1, num2);
 // addNumbers(10, 20);
 
+/////////////////////////
 // 2) Log a user from an array
 
 const userArr = ["Melissa", "Doug", "Ed", "Mary"];
@@ -125,14 +126,16 @@ function logNames(arr) {
   }
 }
 
-// logNames(userArr);
+logNames(userArr);
 
+//////////////////////////////////////////////////
 // 3) Return an array of adult ages
 const ages = [9, 65, 18, 22, 13, 32];
 
 function isAdult(arr) {
   let adults = [];
-  for (let i = 0; i < arr.length - 1; i++) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`index ${i} : ${arr[i]}`);
     if (arr[i] >= 18) {
       adults.push(arr[i]);
     }
@@ -140,16 +143,26 @@ function isAdult(arr) {
   return adults;
 }
 
-// console.log(isAdult(ages));
+console.log(isAdult(ages));
 
+//////////////////////////////////////////////////
 // 4) Return array of odd numbers
 
 function oddNumbers(arr) {
-  return arr;
+  let oddNums = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      oddNums.push(arr[i]);
+    }
+  }
+
+  return oddNums;
 }
 
-console.log(oddNumbers([6, 7, 9, 3, 4, 55, 2, 42]));
+console.log(oddNumbers([0, 1, 6, 7, 9, 3, 4, 55, 2]));
 
+/////////////////////////
 // 5) Convert Farenheit to celcius
 // (0°C * 9/5) + 32
 
@@ -161,3 +174,10 @@ function convertToFarenheit(deg) {
 
 // console.log(convertToFarenheit(5));
 // console.log(convertToFarenheit(30));
+
+function exampleFunction(param) {
+  // Do something in here
+  return param;
+}
+
+exampleFunction();
