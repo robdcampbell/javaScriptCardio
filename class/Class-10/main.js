@@ -1,42 +1,40 @@
-// ***** MAKE SURE TO EDIT
-// also - https://css.svahtml.com/7/index.html
-
 ////////////////////////
 // CLASS 10
 //////////////////////////
 
+///////////////////////////////////////////////////////////////////
 ////////////////////////
-// Loops
+// LOOPS
 //////////////////////////
-// For Loops
+
+// For Loops //
 for (let i = 0; i < 10; i++) {
-  //console.log(i);
+  console.log(i);
 }
 
-// Loop through an array
-
+// Example -  Loop through an array //
 const arr = ["apples", "bananas", "oranges", "broccoli"];
 
 for (let i = 0; i <= arr.length - 1; i++) {
-  //console.log(arr[i]);
+  console.log(arr[i]);
 }
 
-// Loop through a string
+// Example -  Loop through a string //
 const str = "Hello world!";
 
 for (let i = 0; i <= str.length - 1; i++) {
   // console.log(str[i]);
 }
 
-// WHILE LOOP
+// WHILE LOOP //
 let counter = 0;
 
 while (counter < 10) {
-  // console.log(counter);
+  console.log(counter);
   counter++;
 }
 
-////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 // If statements and conditions
 //////////////////////////////////////////////////
 
@@ -89,19 +87,19 @@ val !== 10; // FALSE
 val > 0 || val > 10; // true
 val > 0 && val > 10; // FALSE
 
-////////////////////////////////////////////////
-// Functions
+///////////////////////////////////////////////////////////////////
+// FUNCTIONS
 //////////////////////////////////////////////////
 
-// declare a function, function arguments
+/*
+  Function Syntax
+  - 1) declare a function: function name, parameters, code block
+  - 2) return within the function
+  - 3) invoke the function in the document
+*/
 
-// return the function
-
-// invoke the function
-
-//
+///////////////////////////
 // FUNCTION EXAMPLES
-//
 
 //  1) Fuction: Add 2 values
 
@@ -115,7 +113,7 @@ function addNumbers(a, b) {
 // addNumbers(num1, num2);
 // addNumbers(10, 20);
 
-/////////////////////////
+///////////////////////////
 // 2) Log a user from an array
 
 const userArr = ["Melissa", "Doug", "Ed", "Mary"];
@@ -128,7 +126,7 @@ function logNames(arr) {
 
 logNames(userArr);
 
-//////////////////////////////////////////////////
+///////////////////////////
 // 3) Return an array of adult ages
 const ages = [9, 65, 18, 22, 13, 32];
 
@@ -145,7 +143,7 @@ function isAdult(arr) {
 
 console.log(isAdult(ages));
 
-//////////////////////////////////////////////////
+///////////////////////////
 // 4) Return array of odd numbers
 
 function oddNumbers(arr) {
@@ -162,7 +160,7 @@ function oddNumbers(arr) {
 
 console.log(oddNumbers([0, 1, 6, 7, 9, 3, 4, 55, 2]));
 
-/////////////////////////
+///////////////////////////
 // 5) Convert Farenheit to celcius
 // (0°C * 9/5) + 32
 
@@ -175,13 +173,7 @@ function convertToFarenheit(deg) {
 // console.log(convertToFarenheit(5));
 // console.log(convertToFarenheit(30));
 
-function exampleFunction(param) {
-  // Do something in here
-  return param;
-}
-
-exampleFunction();
-
+///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////
 // DOM
 //////////////////////////////////////////////////
