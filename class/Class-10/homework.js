@@ -11,17 +11,26 @@ console.log(exampleFunc());
 
 /////////////////////////////////////////
 // 1) Create a function that logs all the values in an array to the console.
-function logAllValues() {
-  // Write code here
+
+function logAllValues(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
 }
 
-console.log(logAllValues(["string", 9, true, "Hello World"]));
+logAllValues(["string", 9, true, "Hello World"]);
 
 /////////////////////////////////////////
 // 2) Create a function that returns a new array with words longer than 5 letters.
-function longWords() {
+function longWords(arr) {
+  console.log("test");
   let newWordsArr = [];
-  // Write code here
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length >= 5) {
+      newWordsArr.push(arr[i]);
+    }
+  }
 
   return newWordsArr;
 }
