@@ -43,8 +43,9 @@ main {
 }
 
 .add-btn {
-  background: #dcf7c7;
-  padding: 0.25rem 0.5rem;
+  background: #238ee6;
+  color: #fff;
+  padding: 0.5rem;
   border: #808080 solid 1px;
   border-radius: 0.25rem;
 }
