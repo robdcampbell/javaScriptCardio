@@ -40,6 +40,10 @@ function createListItem(val) {
 function deleteTask(e) {
   e.preventDefault;
   if (e.target.className === "delete-btn") {
+    const deletedTask = e.target.parentElement.children[0].textContent;
+    // Log of deleted task.
+    console.log(`Task: ${deletedTask}, was deleted!`);
+    // Removing task list item
     e.target.parentElement.remove();
   }
 }
