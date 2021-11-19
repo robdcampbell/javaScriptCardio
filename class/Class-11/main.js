@@ -8,7 +8,7 @@ window.onload = getListItems();
 addBtn.addEventListener("click", addTaskToList);
 taskList.addEventListener("click", deleteTask);
 
-// Get all list items
+// Get all list items (READ)
 function getListItems() {
   let taskGroup = document.querySelectorAll(".task-item");
   // Convert nodeList to an Array
@@ -18,14 +18,15 @@ function getListItems() {
   });
 }
 
-// Add new task to list function
+// Add new task to list function (CREATE)
 function addTaskToList(e) {
   e.preventDefault();
+  console.log(taskInput.value);
   createListItem(taskInput.value);
   taskInput.value = "";
 }
 
-// create new DOM element function
+// create new DOM element function (CREATE)
 function createListItem(val) {
   const li = document.createElement("li");
   li.className = "task-item";
@@ -36,7 +37,7 @@ function createListItem(val) {
   taskList.appendChild(li);
 }
 
-// Delete task from group
+// Delete task from group (DELETE)
 function deleteTask(e) {
   e.preventDefault;
   if (e.target.className === "delete-btn") {
@@ -47,3 +48,27 @@ function deleteTask(e) {
     e.target.parentElement.remove();
   }
 }
+
+////////////////////////////////////////////////////////////
+
+// JAVASCRIPT OBJECTS
+
+// OBJECT LITERAL
+
+const car = {
+  make: "Jeep",
+  color: "black",
+  year: 2010,
+};
+
+//console.log(car)
+
+// OBJECT CONSTRUCTOR
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const user1 = new User("Jane Doe", 31);
+
+//console.log(user1);
