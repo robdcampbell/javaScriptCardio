@@ -39,7 +39,7 @@ function createListItem(val) {
 
 // Delete task from group (DELETE)
 function deleteTask(e) {
-  e.preventDefault;
+  e.preventDefault();
   if (e.target.className === "delete-btn") {
     const deletedTask = e.target.parentElement.children[0].textContent;
     // Log of deleted task.

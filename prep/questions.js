@@ -93,3 +93,13 @@ function addName(obj, name, value) {
 
 // console.log(addName({}, "dogs", 4));
 // console.log(addName({ "lead-actor": "Batman" }, "villan", "Joker"));
+
+console.log("ok ok ok oktest");
+console.log(
+  Array.from({
+    length: 10,
+    function(_, i) {
+      return i + 1;
+    },
+  })
+);
