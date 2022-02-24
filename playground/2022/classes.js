@@ -20,9 +20,7 @@ class myClass {
   }
 }
 var v = new myClass({ a: "a value", b: "b value" });
-// console.log(v.toSource());
 var w = new myClass();
-// /console.log(w.toSource());
 
 // END OBJECT EXAMPLE WITH DEFAULTS
 
@@ -39,10 +37,7 @@ class Vehicle {
 }
 
 const tricycle = new Vehicle({ numWheels: 3, weight: 15 });
-// console.log(tricycle.vehicleInfo());
-
 const bike = new Vehicle(2, 15);
-console.log(bike.vehicleInfo());
 
 // extend the class
 class Car extends Vehicle {
@@ -66,5 +61,3 @@ const jeep = new Car({
   numWheels: 4,
   weight: 2000,
 });
-
-console.log(jeep.carInfo());
