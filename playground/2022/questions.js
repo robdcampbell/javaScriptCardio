@@ -62,4 +62,59 @@ function isPangram(string) {
 }
 
 const panGramTest = "The quick brown fox jumps over the lazy dog";
-console.log(isPangram(panGramTest));
+// console.log(isPangram(panGramTest));
+
+////////////////////
+// 4) return a num in descending order
+
+function descendingOrder(n) {
+  //...
+  return Number([...String(n)].sort((a, b) => b - a).join(""));
+}
+
+// console.log(descendingOrder(9875));
+// console.log(descendingOrder(123));
+
+////////////////////////////////////////
+// 5) Take a Ten Minute Walk
+
+// origin: [0,0]
+// vertical count, start 0. n===+1, s===-1
+// horizontal count, start 0. n===+w, e===-1
+
+// if [0,0] true, else false.
+function isValidWalk(walk) {
+  //insert brilliant code here
+  let x = 0;
+  let y = 0;
+
+  if (walk.length !== 10) {
+    return false;
+  }
+
+  walk.forEach((coord) => {
+    coord === "n"
+      ? x++
+      : coord === "s"
+      ? x--
+      : coord === "w"
+      ? y--
+      : coord === "e"
+      ? y++
+      : 0;
+  });
+  return x === 0 && y === 0;
+}
+
+console.log(
+  isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"])
+);
+
+////////////////////////////////////////
+// 6) Return Negative
+function makeNegative(num) {
+  num === 0 ? num : num > 0 ? (num = num * -1) : num;
+  return num;
+  //  return -Math.abs(num);
+  //  return num < 0 ? num : -num;
+}
