@@ -118,3 +118,11 @@ function makeNegative(num) {
   //  return -Math.abs(num);
   //  return num < 0 ? num : -num;
 }
+
+//////////////////////////////////////////
+// 7)
+// ISOGRAM (test if a word has all unique characters)
+function isIsogram(str) {
+  const lower = str.toLowerCase();
+  return lower.length === new Set(lower.split("")).size;
+}
