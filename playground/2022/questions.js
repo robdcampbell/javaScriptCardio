@@ -153,4 +153,22 @@ function towerBuilder(nFloors) {
   return tower;
 }
 
-console.log(towerBuilder(6));
+// GOOD TO KNOW: console.log("9".repeat(10)) // str.repeat()
+
+// console.log(towerBuilder(6));
+
+/* Another good answer: 
+function towerBuilder(n) {
+  return Array.from({length: n}, function(v, k) {
+    const spaces = ' '.repeat(n - k - 1);
+    return spaces + '*'.repeat(k + k + 1) + spaces;
+  });
+}
+
+*/
+
+
+
+////////////////////////////////////
+// 9) 
+
