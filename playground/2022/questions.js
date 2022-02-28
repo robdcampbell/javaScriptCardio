@@ -136,19 +136,18 @@ function towerBuilder(nFloors) {
   for (let i = 1; i <= nFloors; i++) {
     // num of stars
     let stars;
-    i === 1 ? (stars = 1) : (stars = (i * 2) - 1);
-    let row = new Array(stars).fill("*").join('')
+    i === 1 ? (stars = 1) : (stars = i * 2 - 1);
+    let row = new Array(stars).fill("*").join("");
 
     // num of spaces
     let spaces;
-    i === nFloors ? spaces = 1:  spaces = nFloors-i;
-    const spaceArr = new Array(spaces).fill(" ").join('');
-    if(i===nFloors){
+    i === nFloors ? (spaces = 1) : (spaces = nFloors - i);
+    const spaceArr = new Array(spaces).fill(" ").join("");
+    if (i === nFloors) {
       tower.push(`${row}`);
-    } else{
-      tower.push(`${spaceArr}${row}${spaceArr}`);  
+    } else {
+      tower.push(`${spaceArr}${row}${spaceArr}`);
     }
-    
   }
   return tower;
 }
@@ -167,20 +166,18 @@ function towerBuilder(n) {
 
 */
 
-
-
 ////////////////////////////////////
-// 9) 
+// 9)
 
 function century(year) {
-  if(year < 100) return 1;
-  
-  const cent = year/100;
-  
-  if(Number.isInteger(cent)){
-    return cent
-  }else {
-    return Math.floor(cent) +1
+  if (year < 100) return 1;
+
+  const cent = year / 100;
+
+  if (Number.isInteger(cent)) {
+    return cent;
+  } else {
+    return Math.floor(cent) + 1;
   }
 }
 
@@ -190,7 +187,18 @@ function century(year) {
 // console.log(century(1705))
 // console.log(century(1900))
 
-
-
 ////////////////////////////////////
-// 10) 
+// 10)
+
+function order(words) {
+  const strArr = words.split(" ");
+  let order = new Array(strArr.length).fill(0);
+  for (let i = 0; i < strArr.length; i++) {
+    const sorted = strArr[i].split("").sort();
+    console.log(`TRUE: ${sorted[0]}, ${i}`);
+    order[sorted[0] - 1] = strArr[i];
+  }
+  return order.join(" ");
+}
+
+console.log(order("is2 Thi1s T4est 3a"));
