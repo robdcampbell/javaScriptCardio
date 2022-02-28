@@ -184,6 +184,13 @@ function century(year) {
   }
 }
 
-console.log(century(89))
-console.log(century(1705))
-console.log(century(1900))
+// ONE LINER: const century = year => Math.ceil(year/100)
+
+// console.log(century(89))
+// console.log(century(1705))
+// console.log(century(1900))
+
+
+
+////////////////////////////////////
+// 10) 
