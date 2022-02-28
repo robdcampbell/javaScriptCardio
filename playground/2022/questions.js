@@ -172,3 +172,18 @@ function towerBuilder(n) {
 ////////////////////////////////////
 // 9) 
 
+function century(year) {
+  if(year < 100) return 1;
+  
+  const cent = year/100;
+  
+  if(Number.isInteger(cent)){
+    return cent
+  }else {
+    return Math.floor(cent) +1
+  }
+}
+
+console.log(century(89))
+console.log(century(1705))
+console.log(century(1900))
