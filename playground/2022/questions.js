@@ -106,9 +106,9 @@ function isValidWalk(walk) {
   return x === 0 && y === 0;
 }
 
-console.log(
-  isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"])
-);
+// console.log(
+//   isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"])
+// );
 
 ////////////////////////////////////////
 // 6) Return Negative
@@ -126,3 +126,31 @@ function isIsogram(str) {
   const lower = str.toLowerCase();
   return lower.length === new Set(lower.split("")).size;
 }
+
+//////////////////////////////////////////
+// 8) Build Tower
+function towerBuilder(nFloors) {
+  // build here
+  let tower = [];
+
+  for (let i = 1; i <= nFloors; i++) {
+    // num of stars
+    let stars;
+    i === 1 ? (stars = 1) : (stars = (i * 2) - 1);
+    let row = new Array(stars).fill("*").join('')
+
+    // num of spaces
+    let spaces;
+    i === nFloors ? spaces = 1:  spaces = nFloors-i;
+    const spaceArr = new Array(spaces).fill(" ").join('');
+    if(i===nFloors){
+      tower.push(`${row}`);
+    } else{
+      tower.push(`${spaceArr}${row}${spaceArr}`);  
+    }
+    
+  }
+  return tower;
+}
+
+console.log(towerBuilder(6));
