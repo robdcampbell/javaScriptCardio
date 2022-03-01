@@ -201,4 +201,18 @@ function order(words) {
   return order.join(" ");
 }
 
-console.log(order("is2 Thi1s T4est 3a"));
+// console.log(order("is2 Thi1s T4est 3a"));
+
+///////////////////////////////////
+// 11 RegEx for 4 or 6 number pin
+
+function validatePIN(pin) {
+  //if( /\b^[0-9]{4}\b/.test(pin)  || /\b^[0-9]{6}\b/.test(pin) ){
+  if (/^\d{4}$/.test(pin) || /^\d{6}$/.test(pin)) {
+    if (Number.isInteger(parseFloat(pin))) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log(validatePIN("123456"));
