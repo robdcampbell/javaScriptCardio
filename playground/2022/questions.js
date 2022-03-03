@@ -216,3 +216,4 @@ function validatePIN(pin) {
   return false;
 }
 console.log(validatePIN("123456"));
+//
