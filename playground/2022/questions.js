@@ -311,3 +311,5 @@ function binaryTranslate(num){
 }
 
 console.log(binaryTranslate(23));
+
+//
