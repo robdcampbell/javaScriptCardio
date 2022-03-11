@@ -61,3 +61,33 @@ const jeep = new Car({
   numWheels: 4,
   weight: 2000,
 });
+
+
+// _ _ _ _ _ _ _ _ _ _ _ 
+
+class User {
+  constructor({name, age, accountType}){
+    this.name = name;
+    this.age = age;
+    this. accountType = accountType;
+  }
+  getUserInfo(){
+    return `Username: ${this.name}. Age: ${this.age}. Permissions: ${this.accountType}`
+  }
+}
+
+class NintendoChar extends User {
+
+  constructor({name, age, accountType}){
+    super (name, age, accountType);
+    this.name = name;
+    this.age = age;
+    this.accountType = accountType;
+  }
+
+}
+
+const adminUser = new User({name: 'Burt Reynolds', age:55, accountType: 'Admin'});
+const standardUser = new NintendoChar({name: 'Mario', age:50, accountType: 'Standard'});
+console.log(adminUser.getUserInfo());
+console.log(standardUser.getUserInfo());
