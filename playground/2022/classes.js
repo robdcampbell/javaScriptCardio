@@ -66,7 +66,9 @@ const jeep = new Car({
 // _ _ _ _ _ _ _ _ _ _ _ 
 
 class User {
-  constructor({name, age, accountType}){
+  constructor(
+    {name="john", age=30, accountType='standard'} = {name:"john", age:30, accountType:'standard'}
+    ){
     this.name = name;
     this.age = age;
     this. accountType = accountType;
@@ -88,6 +90,6 @@ class NintendoChar extends User {
 }
 
 const adminUser = new User({name: 'Burt Reynolds', age:55, accountType: 'Admin'});
-const standardUser = new NintendoChar({name: 'Mario', age:50, accountType: 'Standard'});
+const standardUser = new NintendoChar({name: 'Mario', age:50});
 console.log(adminUser.getUserInfo());
 console.log(standardUser.getUserInfo());
