@@ -4,6 +4,11 @@
     constructor and destrutured with default values. This helps
     with passing values in using keys rather than position in
     the class instatiation argument. 
+
+    - create class 
+    - create class with default values (with literal arguments, and then with object deconstruction) 
+    - extend the class to another class
+    - 
 */
 
 class myClass {
@@ -24,9 +29,21 @@ var w = new myClass();
 
 // END OBJECT EXAMPLE WITH DEFAULTS
 
+// class Vehicle {
+//   constructor(
+//     { numWheels = 18, weight = 150 } = { numWheels: 18, weight: 150 }
+//   ) {
+//     this.numWheels = numWheels;
+//     this.weight = weight;
+//   }
+//   vehicleInfo() {
+//     return `This vehicle has ${this.numWheels} wheels and weighs ${this.weight} lbs.`;
+//   }
+// }
+
 class Vehicle {
   constructor(
-    { numWheels = 18, weight = 150 } = { numWheels: 18, weight: 150 }
+    { numWheels, weight } = { numWheels, weight }
   ) {
     this.numWheels = numWheels;
     this.weight = weight;
@@ -61,7 +78,15 @@ const jeep = new Car({
   numWheels: 4,
   weight: 2000,
 });
+const HondaCB750 = new Car({
+  model: "Honda",
+  color: "Black",
+  year: "1970",
+  numWheels: 2,
+  weight: 1200,
+});
 
+console.log(HondaCB750.carInfo());
 
 // _ _ _ _ _ _ _ _ _ _ _ 
 
@@ -91,5 +116,5 @@ class NintendoChar extends User {
 
 const adminUser = new User({name: 'Burt Reynolds', age:55, accountType: 'Admin'});
 const standardUser = new NintendoChar({name: 'Mario', age:50});
-console.log(adminUser.getUserInfo());
-console.log(standardUser.getUserInfo());
+// console.log(adminUser.getUserInfo());
+// console.log(standardUser.getUserInfo());
