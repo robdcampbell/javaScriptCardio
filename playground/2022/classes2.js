@@ -19,7 +19,7 @@ const player0 = new Character({})
 // console.log(player0);
 // console.log(player0.getCharInfo());
 //
-console.log(playerTest);
+// console.log(playerTest);
 // console.log(playerTest.getCharInfo());
 
 class WaterType extends Character{
@@ -32,7 +32,8 @@ class WaterType extends Character{
     }
 }
 
-const player2 = new WaterType({age:1000})
-console.log(player2);
+const player2 = new WaterType({age:20, type:"Earth"})
 
+console.log(player2);
+console.log(player2.getCharInfo());
 
