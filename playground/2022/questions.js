@@ -310,6 +310,16 @@ function binaryTranslate(num){
 
 }
 
-console.log(binaryTranslate(23));
+// console.log(binaryTranslate(23));
 
-//
+//////////////////////////////////////
+// 14 Function Cache
+var complexFunction = function(arg1, arg2) { /* complex calculation in here */ return 'ex:1'};
+var cachedFunction = cache(complexFunction);
+
+function cache(func) {
+  // do your magic here
+  return arguments[0];
+}
+console.log(cachedFunction);
+//cachedFunction('foo', 'bar');
