@@ -324,15 +324,27 @@ cachedFunction('foo', 'baz'); // should be executed, because the method wasn't i
 */
 
 // 14 Function Cache
-function complexFunction(arg1, arg2) { /* complex calculation in here */ };
-//function complexFunction(arg1, arg2) { /* complex calculation in here */ return 'ex:1'};
-var cachedFunction = cache(complexFunction);
+  // https://www.codewars.com/kata/525481903700c1a1ff0000e1/solutions
+// function complexFunction(arg1, arg2) { /* complex calculation in here */ };
+// //function complexFunction(arg1, arg2) { /* complex calculation in here */ return 'ex:1'};
+// var cachedFunction = cache(complexFunction);
 
-function cache(func) {
-  // do your magic here
-  const argsFirst = func.call(this);
-  return argsFirst;
-}
-console.log(cachedFunction());
+// function cache(func) {
+//   // do your magic here
+//   const argsFirst = func.call(this);
+//   return argsFirst;
+// }
+// console.log(cachedFunction());
 // console.log(complexFunction);
 // cachedFunction('foo', 'bar');
+
+function cache(func) {
+  var calls = {};
+  return function() {
+    var key = JSON.stringify(arguments);
+    if (!(key in calls)) {
+      calls[key] = func.apply(null, arguments);
+    }
+    return calls[key];
+  };
+}
