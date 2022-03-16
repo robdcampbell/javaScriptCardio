@@ -313,13 +313,26 @@ function binaryTranslate(num){
 // console.log(binaryTranslate(23));
 
 //////////////////////////////////////
+/*
+  var complexFunction = function(arg1, arg2) { // complex calculation in here};
+var cachedFunction = cache(complexFunction);
+
+cachedFunction('foo', 'bar'); // complex function should be executed
+cachedFunction('foo', 'bar'); // complex function should not be invoked again, instead the cached result should be returned
+cachedFunction('foo', 'baz'); // should be executed, because the method wasn't invoked before with these arguments
+
+*/
+
 // 14 Function Cache
-var complexFunction = function(arg1, arg2) { /* complex calculation in here */ return 'ex:1'};
+function complexFunction(arg1, arg2) { /* complex calculation in here */ };
+//function complexFunction(arg1, arg2) { /* complex calculation in here */ return 'ex:1'};
 var cachedFunction = cache(complexFunction);
 
 function cache(func) {
   // do your magic here
-  return arguments[0];
+  const argsFirst = func.call(this);
+  return argsFirst;
 }
-console.log(cachedFunction);
-//cachedFunction('foo', 'bar');
+console.log(cachedFunction());
+// console.log(complexFunction);
+// cachedFunction('foo', 'bar');
