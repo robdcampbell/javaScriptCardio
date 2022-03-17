@@ -348,3 +348,8 @@ function cache(func) {
     return calls[key];
   };
 }
+var arg1 = 'foo';
+var arg2 = 'bar';
+var complexFunction = function(arg1, arg2) { /* complex calculation in here */ };
+
+cache(complexFunction); 
