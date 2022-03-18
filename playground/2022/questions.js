@@ -342,14 +342,21 @@ function cache(func) {
   var calls = {};
   return function() {
     var key = JSON.stringify(arguments);
+    console.log(key);
     if (!(key in calls)) {
       calls[key] = func.apply(null, arguments);
     }
+    // console.log(calls[key])
     return calls[key];
   };
 }
 var arg1 = 'foo';
 var arg2 = 'bar';
+//var complexFunction = function(arg1, arg2) { /* complex calculation in here */ };
 var complexFunction = function(arg1, arg2) { /* complex calculation in here */ };
+var cachedFunction = cache(complexFunction);
 
-cache(complexFunction); 
+cachedFunction('foo', 'bar'); // complex function should be executed
+cachedFunction('foo', 'bar'); // complex function should not be invoked again, instead the cached result should be returned
+cachedFunction('foo', 'baz'); // should be executed, because the method wasn't invoked before with these arguments
+console.log(cache(complexFunction)); 
