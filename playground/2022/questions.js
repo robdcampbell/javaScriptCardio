@@ -224,17 +224,17 @@ function validatePIN(pin) {
 function nbYear(p0, percent, aug, p) {
   // your code
   let years;
-  if(percent ===0){
-    years= -1;
+  if (percent === 0) {
+    years = -1;
   } else {
     years = 0;
   }
   let population = p0;
-  while (Math.floor(population) < p+1) {
+  while (Math.floor(population) < p + 1) {
     // console.log(population)
-    population += (population * (percent / 100)+ aug);
+    population += population * (percent / 100) + aug;
     years++;
-    console.log(Math.floor(population))
+    console.log(Math.floor(population));
   }
   return years;
   // let years = 0;
@@ -242,7 +242,7 @@ function nbYear(p0, percent, aug, p) {
   //   p0 += ((p0 * (percent / 100)) + aug);
   //   years++
   // }
-  
+
   return years;
 }
 
@@ -250,7 +250,6 @@ function nbYear(p0, percent, aug, p) {
 // console.log(nbYear(1000, 2, 50, 1214));
 // console.log(nbYear(1500000, 2.5, 10000, 2000000));
 // console.log(nbYear(1500000, 0, 10000, 2000000));
-
 
 ///////////////////////
 // 12
@@ -275,26 +274,22 @@ longest_consec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abi
 */
 
 function longestConsec(strarr, k) {
-
-  if(strarr.length < k || k <=0 || strarr.length === 0){
-    return ""
+  if (strarr.length < k || k <= 0 || strarr.length === 0) {
+    return "";
   }
 
   let str = "";
-  
-  for(let i = 0; i <= strarr.length-k; i++){
-  
+
+  for (let i = 0; i <= strarr.length - k; i++) {
     let consec = "";
-    
-    for(let j = 0; j < k ; j++){
-      
-      consec += strarr[i+j];
+
+    for (let j = 0; j < k; j++) {
+      consec += strarr[i + j];
     }
-    
-    if(consec.length > str.length){
+
+    if (consec.length > str.length) {
       str = consec;
     }
-  
   }
   return str;
 }
@@ -304,10 +299,8 @@ function longestConsec(strarr, k) {
 
 // Create a binary from a number.
 
-function binaryTranslate(num){
-
+function binaryTranslate(num) {
   return num.toString(2);
-
 }
 
 // console.log(binaryTranslate(23));
@@ -324,7 +317,7 @@ cachedFunction('foo', 'baz'); // should be executed, because the method wasn't i
 */
 
 // 14 Function Cache
-  // https://www.codewars.com/kata/525481903700c1a1ff0000e1/solutions
+// https://www.codewars.com/kata/525481903700c1a1ff0000e1/solutions
 // function complexFunction(arg1, arg2) { /* complex calculation in here */ };
 // //function complexFunction(arg1, arg2) { /* complex calculation in here */ return 'ex:1'};
 // var cachedFunction = cache(complexFunction);
@@ -340,7 +333,7 @@ cachedFunction('foo', 'baz'); // should be executed, because the method wasn't i
 
 function cache(func) {
   var calls = {};
-  return function() {
+  return function () {
     var key = JSON.stringify(arguments);
     console.log(key);
     if (!(key in calls)) {
@@ -350,13 +343,15 @@ function cache(func) {
     return calls[key];
   };
 }
-var arg1 = 'foo';
-var arg2 = 'bar';
+var arg1 = "foo";
+var arg2 = "bar";
 //var complexFunction = function(arg1, arg2) { /* complex calculation in here */ };
-var complexFunction = function(arg1, arg2) { /* complex calculation in here */ };
+var complexFunction = function (arg1, arg2) {
+  /* complex calculation in here */
+};
 var cachedFunction = cache(complexFunction);
 
-cachedFunction('foo', 'bar'); // complex function should be executed
-cachedFunction('foo', 'bar'); // complex function should not be invoked again, instead the cached result should be returned
-cachedFunction('foo', 'baz'); // should be executed, because the method wasn't invoked before with these arguments
-console.log(cache(complexFunction)); 
+cachedFunction("foo", "bar"); // complex function should be executed
+cachedFunction("foo", "bar"); // complex function should not be invoked again, instead the cached result should be returned
+cachedFunction("foo", "baz"); // should be executed, because the method wasn't invoked before with these arguments
+console.log(cache(complexFunction));
