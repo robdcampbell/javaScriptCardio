@@ -14,6 +14,8 @@ const user1 = new User({ name: "Ash", email: "ash@pokemon.com" });
 ////////////////////////////////////////////////////////////
 // BIND
 
+// Will not work with an arrow function because of the this binding.
+
 // coordinates example
 let c1 = {
   x: 2,
