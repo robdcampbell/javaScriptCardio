@@ -32,10 +32,18 @@ const logCoords = function () {
 
 let c1Coords = logCoords.bind(c1);
 
-console.log(c1Coords());
+// console.log(c1Coords());
 
 ////////////////////////////////////////////////////////////
 // CALL
+
+// use call to convert arguments into an actual array
+function argsToArray() {
+  const newArr = [].slice.call(arguments);
+  console.log(newArr);
+}
+
+argsToArray("Charmander", "Bulbasaur", "Squirtle");
 
 ////////////////////////////////////////////////////////////
 // APPLY
