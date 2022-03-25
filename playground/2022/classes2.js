@@ -29,7 +29,7 @@ const player0 = new Character({});
 // console.log(playerTest.getCharInfo());
 
 class WaterType extends Character {
-  constructor({ age = 99, name, level, type = "water" }) {
+  constructor({ age = 99, name, level, type = "grass" }) {
     super({ age, name, level });
     // this.age = age;
     // this.name = name;
