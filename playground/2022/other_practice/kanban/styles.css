@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.kanban {
+  display: flex;
+  padding: 2rem;
+  width: 750px;
+  background: #009578;
+}
+
+.kanban__column {
+  flex: 1;
+}
+
+.kanban__column:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.kanban__column-title {
+}
