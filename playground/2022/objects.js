@@ -27,12 +27,16 @@ let c2 = {
 };
 
 const logCoords = function () {
-  console.log(this.x, this.y);
+  return `COORDINATES: ${this.x}, ${this.y}`;
 };
 
 let c1Coords = logCoords.bind(c1);
 
-// console.log(c1Coords());
+console.log(c1Coords());
+
+let c2Coords = logCoords.bind(c2);
+
+console.log(c2Coords());
 
 ////////////////////////////////////////////////////////////
 // CALL
