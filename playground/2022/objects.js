@@ -49,5 +49,14 @@ function argsToArray() {
 
 argsToArray("Charmander", "Bulbasaur", "Squirtle");
 
+var objCall = { num: 2 };
+function add(a) {
+  return this.num + a;
+}
+
+add.call(objCall, 3);
+
+console.log(objCall);
+
 ////////////////////////////////////////////////////////////
 // APPLY
