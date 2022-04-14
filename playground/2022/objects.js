@@ -32,11 +32,20 @@ const logCoords = function () {
 
 let c1Coords = logCoords.bind(c1);
 
-console.log(c1Coords());
+// console.log(c1Coords());
 
 let c2Coords = logCoords.bind(c2);
 
-console.log(c2Coords());
+// console.log(c2Coords());
+
+let c3 = {
+  x: 23.44525435345,
+  y: 98.44525435345,
+};
+
+let c3Coords = logCoords.bind(c3);
+
+console.log(c3Coords());
 
 ////////////////////////////////////////////////////////////
 // CALL
