@@ -69,3 +69,26 @@ console.log(objCall);
 
 ////////////////////////////////////////////////////////////
 // APPLY
+
+/// Random for...in stuff
+let sports = {
+  hockey: {
+    sticks: true,
+    periods: 3,
+  },
+  soccer: {
+    sticks: false,
+    periods: 2,
+  },
+  baseball: {
+    sticks: false,
+    periods: 9,
+  },
+};
+
+for (let sport in sports) {
+  console.log(sport);
+}
+for (let hockey in sports.hockey) {
+  console.log(hockey);
+}
