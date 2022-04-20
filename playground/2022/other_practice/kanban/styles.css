@@ -6,7 +6,8 @@ body {
   display: flex;
   padding: 2rem;
   width: 750px;
-  background: #009578;
+  background: #75dfff;
+  border-radius: 0.5rem;
 }
 
 .kanban__column {
@@ -18,4 +19,8 @@ body {
 }
 
 .kanban__column-title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #fff;
+  user-select: none;
 }
