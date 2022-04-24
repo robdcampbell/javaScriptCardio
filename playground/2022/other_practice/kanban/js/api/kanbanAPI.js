@@ -23,6 +23,9 @@ export default class KanbanAPI {
 
     return item;
   }
+  static updateItem(itemId, newProps) {
+    const data = read();
+  }
 }
 
 // Read from LOCAL STORAGE
