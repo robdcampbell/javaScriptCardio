@@ -1,3 +1,5 @@
 import KanbanAPI from "./api/kanbanAPI.js";
-// const KanbanAPI = require("./api/kanbanAPI.js");
-console.log(KanbanAPI.getItems(1));
+
+// TESTS
+// console.log(KanbanAPI.getItems(1));
+// console.log(KanbanAPI.insertItem(1, "Start this project"));

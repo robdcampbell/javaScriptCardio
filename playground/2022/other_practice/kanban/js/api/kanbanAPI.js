@@ -8,6 +8,21 @@ export default class KanbanAPI {
     }
     return column.items;
   }
+  static insertItem(columnId, content) {
+    const data = read();
+    const column = data.find((column) => column.id === columnId);
+    const item = {
+      id: Math.floor(Math.random() * 1000000),
+      content,
+    };
+    if (!column) {
+      throw new Error("Column does not exist.");
+    }
+    column.items.push(item);
+    save(data);
+
+    return item;
+  }
 }
 
 // Read from LOCAL STORAGE
