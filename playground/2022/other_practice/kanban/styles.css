@@ -13,7 +13,7 @@ body {
   display: flex;
   padding: 2rem;
   width: 750px;
-  background: #2db1da;
+  background: hsl(202, 100%, 65%);
   border-radius: 0.25rem;
 }
 
