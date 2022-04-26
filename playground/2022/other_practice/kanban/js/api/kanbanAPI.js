@@ -8,6 +8,7 @@ export default class KanbanAPI {
     }
     return column.items;
   }
+  // Notes
   static insertItem(columnId, content) {
     const data = read();
     const column = data.find((column) => column.id === columnId);
@@ -23,8 +24,19 @@ export default class KanbanAPI {
 
     return item;
   }
+  // Notes
   static updateItem(itemId, newProps) {
     const data = read();
+    // Lambda / arrow IFFE
+    const [item, currentColumn] = (() => {
+      for (const column of data) {
+        const item = column.items.find((item) => item.id === itemId);
+        if (item) {
+          // destructured values
+          return [item, column];
+        }
+      }
+    })();
   }
 }
 
