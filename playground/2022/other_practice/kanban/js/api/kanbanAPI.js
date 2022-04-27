@@ -1,4 +1,5 @@
-// local storage component
+// Kanban APi
+// Local Storage functions
 
 export default class KanbanAPI {
   static getItems(columnId) {
