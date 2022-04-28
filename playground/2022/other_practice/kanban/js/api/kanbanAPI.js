@@ -9,7 +9,7 @@ export default class KanbanAPI {
     }
     return column.items;
   }
-  // Notes
+  // Notes Again
   static insertItem(columnId, content) {
     const data = read();
     const column = data.find((column) => column.id === columnId);
