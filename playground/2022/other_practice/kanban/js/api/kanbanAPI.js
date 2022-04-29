@@ -14,6 +14,7 @@ export default class KanbanAPI {
     const data = read();
     const column = data.find((column) => column.id === columnId);
     const item = {
+      // generate server side UUID when full-stack
       id: Math.floor(Math.random() * 1000000),
       content,
     };
@@ -28,7 +29,7 @@ export default class KanbanAPI {
   // Notes
   static updateItem(itemId, newProps) {
     const data = read();
-    // Lambda / arrow IFFE
+    // Lambda / arrow IFFE, that is destructured
     const [item, currentColumn] = (() => {
       for (const column of data) {
         const item = column.items.find((item) => item.id === itemId);
