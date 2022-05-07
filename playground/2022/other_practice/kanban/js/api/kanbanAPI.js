@@ -44,7 +44,26 @@ export default class KanbanAPI {
       throw new Error("Item not found.");
     }
 
-    console.log(item, currentColumn);
+    item.content =
+      newProps.content === undefined ? item.content : newProps.content;
+
+    //update column and position
+    if (newProps.columnId !== undefined && newProps.position !== undefined) {
+      const targetColumn = data.find(
+        (column) => column.id === newProps.columnId
+      );
+      if (!targetColumn) {
+        throw new Error("Target column not found.");
+      }
+      // Delete the item from it's current column
+      currentColumn.items.splice(currentColumn.items.indexOf(item), 1);
+      // Move item into it's new column and position
+      targetColumn.items.splice(newProps.position, 0, item);
+    }
+
+    save(data);
+
+    // console.log(item, currentColumn);
   }
 }
 
