@@ -7,4 +7,4 @@ import KanbanAPI from "./api/kanbanAPI.js";
 // Insert one to LS
 // console.log(KanbanAPI.insertItem(1, "Start this project"));
 
-KanbanAPI.updateItem(405665);
+KanbanAPI.updateItem(698471);

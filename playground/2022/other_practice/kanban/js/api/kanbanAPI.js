@@ -40,6 +40,10 @@ export default class KanbanAPI {
       }
     })();
 
+    if (!item) {
+      throw new Error("Item not found.");
+    }
+
     console.log(item, currentColumn);
   }
 }
