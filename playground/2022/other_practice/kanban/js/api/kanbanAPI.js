@@ -9,7 +9,7 @@ export default class KanbanAPI {
     }
     return column.items;
   }
-  // Notes Again
+  // Insert / Add new item
   static insertItem(columnId, content) {
     const data = read();
     const column = data.find((column) => column.id === columnId);
@@ -26,7 +26,7 @@ export default class KanbanAPI {
 
     return item;
   }
-  // Notes
+  // Update an existing item
   static updateItem(itemId, newProps) {
     const data = read();
     // Lambda / arrow IFFE, that is destructured
@@ -64,6 +64,17 @@ export default class KanbanAPI {
     save(data);
 
     // console.log(item, currentColumn);
+  }
+  static deleteItem(itemId) {
+    const data = read();
+
+    for (const column of data) {
+      const item = column.items.find((item) => item.id === itemId);
+      if (item) {
+        column.items.splice(column.items.indexOf(item), 1);
+      }
+    }
+    save(data);
   }
 }
 
