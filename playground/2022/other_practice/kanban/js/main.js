@@ -1,6 +1,11 @@
 import KanbanAPI from "./api/kanbanAPI.js";
+import Kanban from "./view/Kanban.js";
 
-// TESTS
+new Kanban(document.querySelector(".kanban"));
+
+//////////////////////////
+//////////////////////////
+// KanbanAPI TESTS
 // get from LS
 // READ
 // console.log(KanbanAPI.getItems(1));
