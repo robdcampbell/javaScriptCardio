@@ -17,4 +17,4 @@ import KanbanAPI from "./api/kanbanAPI.js";
 // });
 
 // DELETE
-KanbanAPI.deleteItem(690180);
+// KanbanAPI.deleteItem(690180);
