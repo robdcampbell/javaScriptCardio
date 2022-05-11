@@ -10,6 +10,7 @@ export default class Column {
     );
     this.elements.addItem =
       this.elements.root.querySelector(".kanban__add-item");
+    this.elements.root.dataset.id = id;
   }
   static createRoot() {
     //
