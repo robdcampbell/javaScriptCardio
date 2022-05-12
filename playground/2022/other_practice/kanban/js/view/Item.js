@@ -33,6 +33,7 @@ export default class Item {
         this.elements.root.parentElement.removeChild(this.elements.root);
       }
     });
+    this.elements.root.addEventListener("dragstart", (e) => {});
   }
 
   static createRoot() {
