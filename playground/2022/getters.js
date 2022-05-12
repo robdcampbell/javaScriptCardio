@@ -12,6 +12,8 @@ let objTest = {
   },
 };
 
+console.log(objTest._meal);
+
 objTest.meal = "Unicorn Farts";
 
 console.log(objTest._meal);
