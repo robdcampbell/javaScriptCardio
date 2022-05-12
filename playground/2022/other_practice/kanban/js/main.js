@@ -1,5 +1,6 @@
 import KanbanAPI from "./api/kanbanAPI.js";
 import Kanban from "./view/Kanban.js";
+// console.log("test");
 
 new Kanban(document.querySelector(".kanban"));
 
@@ -12,7 +13,7 @@ new Kanban(document.querySelector(".kanban"));
 
 // ADD
 // Insert one to LS
-// console.log(KanbanAPI.insertItem(1, "Another new one"));
+// console.log(KanbanAPI.insertItem(3, "Study SSD"));
 
 // UPDATE
 // KanbanAPI.updateItem(690180, {
@@ -22,4 +23,4 @@ new Kanban(document.querySelector(".kanban"));
 // });
 
 // DELETE
-// KanbanAPI.deleteItem(690180);
+// KanbanAPI.deleteItem(704945);
