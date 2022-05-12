@@ -20,7 +20,8 @@ export default class Column {
     });
 
     KanbanAPI.getItems(id).forEach((item) => {
-      console.log(item);
+      //console.log(item);
+      this.renderItem(item);
     });
   }
   static createRoot() {
@@ -39,4 +40,7 @@ export default class Column {
             </div>
         `).children[0];
   }
+  renderItem(data) {}
 }
+
+// 55.50
