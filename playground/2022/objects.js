@@ -1,3 +1,7 @@
+// BIND, APPLY, CALL
+
+// OBJECT.assign(), OBJECT.defineProperty(), OBJECT.entries(), OBJECT.fromEntries(), OBJECT.freeze()
+
 function User({ name, email }) {
   this.name = name;
   this.email = email;
