@@ -1,16 +1,21 @@
 import KanbanAPI from "../api/kanbanAPI.js";
+import DropZone from "./DropZone.js";
 
 export default class Item {
   constructor(id, content) {
+    const bottomDropZone = DropZone.createDropZone();
+
     this.elements = {};
     this.elements.root = Item.createRoot();
     this.elements.input = this.elements.root.querySelector(
       ".kanban__item-input"
     );
     this.elements.root.dataset.id = id;
+    // this.elements.root.id = id;
     this.elements.input.textContent = content;
     // Reference to original content, in case of edits
     this.content = content;
+    this.elements.root.appendChild(bottomDropZone);
 
     // PERSIST EDITS : Clicks to edit/clicks away - ITEM
     const onBlur = () => {
@@ -33,7 +38,12 @@ export default class Item {
         this.elements.root.parentElement.removeChild(this.elements.root);
       }
     });
-    this.elements.root.addEventListener("dragstart", (e) => {});
+    this.elements.root.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text/plain", id);
+    });
+    this.elements.input.addEventListener("drop", (e) => {
+      e.preventDefault();
+    });
   }
 
   static createRoot() {
