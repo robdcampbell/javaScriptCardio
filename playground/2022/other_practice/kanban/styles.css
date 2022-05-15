@@ -31,7 +31,8 @@ body {
 .kanban {
   display: flex;
   padding: 2rem;
-  width: 750px;
+  min-width: 700px;
+  /* width: 750px; */
   /* background: rgba(77, 190, 255, 0.9); */
   background: rgb(77, 190, 255);
   border-radius: 0.25rem;
