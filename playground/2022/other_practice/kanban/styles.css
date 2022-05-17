@@ -30,7 +30,7 @@ body {
 }
 .kanban {
   display: flex;
-  padding: 2rem;
+  padding: 2rem 0;
   min-width: 700px;
   /* width: 750px; */
   /* background: rgba(77, 190, 255, 0.9); */
@@ -40,11 +40,12 @@ body {
 
 .kanban__column {
   flex: 1;
+  padding: 1rem;
 }
 
 .kanban__column:not(:last-child) {
-  padding-right: 0.5rem;
-  margin-right: 0.5rem;
+  /* padding-right: 0.5rem;
+  margin-right: 0.5rem; */
   border-right: #fff solid 1px;
 }
 
@@ -94,10 +95,17 @@ body {
 @media screen and (max-width: 900px) {
   .kanban {
     flex-direction: column;
+    background-color: transparent;
+  }
+  .kanban__column {
+    background: rgb(77, 190, 255);
+    border-radius: 0.25rem;
+    padding: 3rem;
   }
   .kanban__column:not(:last-child) {
     border-right: none;
     border-bottom: #fff solid 1px;
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
+    margin-bottom: 1rem;
   }
 }
