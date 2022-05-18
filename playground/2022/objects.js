@@ -49,7 +49,7 @@ let c3 = {
 
 let c3Coords = logCoords.bind(c3);
 
-console.log(c3Coords());
+// console.log(c3Coords());
 
 ////////////////////////////////////////////////////////////
 // CALL
@@ -69,7 +69,7 @@ function add(a) {
 
 add.call(objCall, 3);
 
-console.log(objCall);
+// console.log(objCall);
 
 ////////////////////////////////////////////////////////////
 // APPLY
@@ -90,9 +90,17 @@ let sports = {
   },
 };
 
-for (let sport in sports) {
-  console.log(sport);
-}
-for (let hockey in sports.hockey) {
-  console.log(hockey);
-}
+// for (let sport in sports) {
+//   console.log(sport);
+// }
+// for (let hockey in sports.hockey) {
+//   console.log(hockey);
+// }
+
+const allSports = Object.keys(sports);
+const allSportVals = Object.values(sports);
+const allSportsAndInfo = Object.entries(sports);
+
+console.log(allSports);
+console.log(allSportVals);
+console.log(allSportsAndInfo);
