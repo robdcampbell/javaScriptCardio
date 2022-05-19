@@ -75,7 +75,7 @@ add.call(objCall, 3);
 // APPLY
 
 /// Random for...in stuff
-let sports = {
+const sports = {
   hockey: {
     sticks: true,
     periods: 3,
@@ -90,6 +90,7 @@ let sports = {
   },
 };
 
+const sports2 = ["hockey", "soccer", "baseball"];
 // for (let sport in sports) {
 //   console.log(sport);
 // }
@@ -100,7 +101,13 @@ let sports = {
 const allSports = Object.keys(sports);
 const allSportVals = Object.values(sports);
 const allSportsAndInfo = Object.entries(sports);
+// const sportsAll = Object.entries(sports);
 
 console.log(allSports);
 console.log(allSportVals);
 console.log(allSportsAndInfo);
+
+let text = "";
+for (let x in sports2) {
+  console.log(x);
+}
