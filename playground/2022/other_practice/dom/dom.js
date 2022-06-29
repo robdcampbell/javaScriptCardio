@@ -1,4 +1,4 @@
-console.log("test");
+console.log("Pterodactyl");
 
 let output = document.querySelector("#output");
 // *** Using innerHtml
