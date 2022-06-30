@@ -22,4 +22,50 @@ const revArr = (arr) => {
 };
 
 //ANSWER
-console.log(revArr(ex2));
+// console.log(revArr(ex2));
+
+// 3). sort and array alphabetically.
+
+const ex3 = [
+  "dog",
+  "cat",
+  "lizard",
+  "pterodactyl",
+  "cobra",
+  "armadillo",
+  "crane",
+  "czar lizard",
+];
+
+// using sort method
+const alphaSort = (arr) => {
+  return arr.sort();
+};
+
+//console.log(alphaSort(ex3));
+
+// 4). sort and array by word length
+
+const ex4 = [
+  "dog",
+  "cat",
+  "lizard",
+  "pterodactyl",
+  "cobra",
+  "armadillo",
+  "crane",
+  "czar lizard",
+];
+
+const charSort = (arr) => {
+  //  return arr.sort((a, b) => a.length - b.length);
+
+  const newArr = [];
+
+  for (let x of arr) {
+    console.log(x);
+  }
+  return "DONE";
+};
+
+console.log(charSort(ex4));
