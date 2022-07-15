@@ -60,6 +60,12 @@ const dogFactory = (name, breed, weight) => {
     set weight(newWeight) {
       return (this._weight = newWeight);
     },
+    bark() {
+      return "ruff! ruff!";
+    },
+    eatTooManyTreats() {
+      this._weight++;
+    },
   };
 };
 
