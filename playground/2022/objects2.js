@@ -1,6 +1,6 @@
 // console.log("Hello, friend");
 
-const dogFactory = function ({ name, breed, weight }) {
+const dogFactory1 = function ({ name, breed, weight }) {
   //   let { name, breed, weight } = arguments;
   return arguments;
   return {
