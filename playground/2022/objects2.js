@@ -10,7 +10,7 @@ const dogFactory1 = function ({ name, breed, weight }) {
   };
 };
 const exampleDog = dogFactory1("spot", "bulldog", 47);
-console.log(exampleDog);
+//onsole.log(exampleDog);
 
 // class Dog {
 //   constructor(name, breed, weight) {
@@ -71,4 +71,25 @@ const dogFactory = (name, breed, weight) => {
 
 const spot = dogFactory("spot", "bulldog", 45);
 
-console.log(spot);
+//console.log(spot);
+
+function pokemonFactory({ name, type, level } = {}) {
+  //return { name, type, level };
+  //return name, type, level;
+  return {
+    name: name,
+    type: type,
+    level: level,
+    pokeDexInfo() {
+      return `${name}, ${type}, ${level}`;
+    },
+  };
+
+  // const pokeDexInfo = function () {
+  //   return `${this.name} is a ${this.type} type, at level ${this.level}`;
+  // };
+}
+
+const mewtwo = pokemonFactory({ name: "Mewtwo", type: "Psychic", level: 100 });
+
+console.log(mewtwo.pokeDexInfo());
