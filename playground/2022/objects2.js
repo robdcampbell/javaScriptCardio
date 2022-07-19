@@ -9,7 +9,7 @@ const dogFactory1 = function ({ name, breed, weight }) {
     _weight: weight,
   };
 };
-const exampleDog = dogFactory("spot", "bulldog", 47);
+const exampleDog = dogFactory1("spot", "bulldog", 47);
 console.log(exampleDog);
 
 // class Dog {
