@@ -18,3 +18,9 @@ function colorChange(event) {
 
 button.addEventListener("click", colorChange);
 mysteryButton.addEventListener("wheel", colorChange);
+
+function changeBackground() {
+  itemTwo.style.backgroundColor = "red";
+}
+
+itemTwo.addEventListener("mouseup", changeBackground);
